@@ -1,0 +1,335 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #FAFAFA;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+}
+
+.logo a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #000;
+}
+
+.nav-links a {
+    margin-left: 40px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #000;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #000;
+}
+
+/* Parallax Sections */
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.parallax-section .content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.section-home {
+    background-image: url('assets/main_bg_1775708794868.png');
+}
+
+.section-home .overlay {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.7) 100%);
+    background-size: 250% 250%, 250% 250%, 200% 200%;
+    animation: homeWaveTwinkle 12s infinite alternate ease-in-out;
+}
+
+@keyframes homeWaveTwinkle {
+    0% {
+        background-position: 0% 0%, 100% 100%, 0% 0%;
+        backdrop-filter: brightness(0.9) contrast(1.1);
+        -webkit-backdrop-filter: brightness(0.9) contrast(1.1);
+    }
+    50% {
+        background-position: 100% 100%, 0% 0%, 100% 100%;
+        backdrop-filter: brightness(1.2) contrast(1.0);
+        -webkit-backdrop-filter: brightness(1.2) contrast(1.0);
+    }
+    100% {
+        background-position: 50% 100%, 50% 0%, 50% 100%;
+        backdrop-filter: brightness(0.95) contrast(1.05);
+        -webkit-backdrop-filter: brightness(0.95) contrast(1.05);
+    }
+}
+
+.section-portfolio {
+    background-image: url('assets/portfolio_bg_1775708809957.png');
+}
+
+.section-home h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.section-home p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+.section-home .subtitle {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    opacity: 0.6;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 120px 5%;
+    background-color: #fff;
+}
+
+.grey-bg {
+    background-color: #F9F9F9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    color: #444;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Portfolio Links */
+.section-portfolio h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.portfolio-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    font-size: 0.95rem;
+    border-radius: 0; /* Sharp corners for modern gallery look */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #000;
+    border-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Contact */
+.contact-info {
+    margin-top: 50px;
+}
+
+.email-link {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #000;
+    color: #000;
+    font-weight: 300;
+}
+
+.email-link:hover {
+    color: #888;
+    border-color: #888;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #050505;
+    color: #666;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-links {
+        margin-top: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+    .section-home h1 {
+        font-size: 3.5rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .portfolio-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-outline {
+        width: 100%;
+    }
+}
