@@ -147,7 +147,18 @@ a {
 }
 
 .section-portfolio {
-    background-image: url('assets/portfolio_bg_1775708809957.png');
+    background-image: url('assets/new_portfolio_bg_1775786806783.png');
+    background-size: 150% 150%;
+    animation: portfolioFlowWaves 25s infinite alternate ease-in-out;
+}
+
+@keyframes portfolioFlowWaves {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .section-home h1 {
@@ -202,7 +213,8 @@ a {
 
 .profile-img {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
+    margin: 0 auto;
     display: block;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.5s ease;
