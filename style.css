@@ -298,6 +298,9 @@ a {
     justify-content: center;
     gap: 80px;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
     padding-right: 40px;
     /* Space for the sliding vinyl */
@@ -364,6 +367,18 @@ a {
     background: linear-gradient(135deg, #d3f3e1, #aad9c2);
 }
 
+.cover-threads {
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+}
+
+.cover-tiktok {
+    background: linear-gradient(135deg, #cffafe, #fce7f3);
+}
+
+.cover-x {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
 .vinyl-record {
     position: absolute;
     top: 5px;
@@ -393,6 +408,99 @@ a {
 .vinyl-nb {
     background-color: #14241b;
     background-image: repeating-radial-gradient(#14241b, #14241b 4px, #1c3024 5px, #14241b 6px);
+}
+
+.vinyl-threads {
+    background-color: #1f2937;
+    background-image: repeating-radial-gradient(#1f2937, #1f2937 4px, #374151 5px, #1f2937 6px);
+}
+
+.vinyl-tiktok {
+    background-color: #111827;
+    background-image: repeating-radial-gradient(#111827, #111827 4px, #1f2937 5px, #111827 6px);
+}
+
+.vinyl-x {
+    background-color: #1e1b4b;
+    background-image: repeating-radial-gradient(#1e1b4b, #1e1b4b 4px, #312e81 5px, #1e1b4b 6px);
+}
+
+.cute-vinyl-yt {
+    background: repeating-conic-gradient(from 0deg, #fff7ed 0deg 15deg, #ffedd5 15deg 30deg);
+}
+
+.cute-vinyl-ig {
+    background-color: #faf5ff;
+    background-image: radial-gradient(#f3e8ff 3px, transparent 4px);
+    background-size: 15px 15px;
+}
+
+.cute-vinyl-nb {
+    background-color: #fefce8;
+    background-image:
+        linear-gradient(rgba(254, 240, 138, 0.3) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(254, 240, 138, 0.3) 2px, transparent 2px);
+    background-size: 15px 15px;
+}
+
+.cute-vinyl-threads {
+    background-color: #f0f9ff;
+    background-image: repeating-radial-gradient(transparent, transparent 10px, #e0f2fe 10px, #e0f2fe 20px);
+}
+
+.cute-vinyl-tiktok {
+    background: repeating-linear-gradient(45deg, #fdf2f8, #fdf2f8 10px, #fce7f3 10px, #fce7f3 20px);
+}
+
+.cute-vinyl-x {
+    background-color: #f0fdf4;
+    background-image: radial-gradient(circle at 30% 30%, #dcfce7 10px, transparent 11px),
+                      radial-gradient(circle at 70% 60%, #dcfce7 15px, transparent 16px),
+                      radial-gradient(circle at 40% 80%, #dcfce7 8px, transparent 9px);
+}
+
+.cute-label {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cute-label::after {
+    display: none;
+}
+
+.cute-label .label-text {
+    display: none;
+}
+
+.cute-label .label-icon {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.cute-label .label-badge {
+    position: absolute;
+    bottom: -12px;
+    background: currentColor;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .inner-label {
@@ -483,7 +591,8 @@ a {
     background: transparent;
 }
 
-.work-thumb img {
+.work-thumb img,
+.work-thumb .lp-disc {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -491,7 +600,18 @@ a {
     transition: transform 0.3s ease;
 }
 
-.work-card:hover .work-thumb img {
+.work-thumb .lp-disc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 12px solid #f9f9f9;
+    box-sizing: border-box;
+}
+
+.work-card:hover .work-thumb img,
+.work-card:hover .work-thumb .lp-disc {
     animation: spinVinyl 3s linear infinite;
 }
 

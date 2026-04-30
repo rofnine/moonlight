@@ -32,7 +32,19 @@ const translations = {
         work_ig_title: "인스타그램 인기 피드",
         work_ig_desc: "트렌디한 시각 효과로 시선을 사로잡은 게시물",
         work_nb_title: "네이버 블로그 리뷰",
-        work_nb_desc: "가장 활발한 소통이 이루어진 유익한 정보글"
+        work_nb_desc: "가장 활발한 소통이 이루어진 유익한 정보글",
+        pf_threads: "Threads",
+        pf_threads_desc: "일상과 생각을 자유롭게 나누는 공간",
+        pf_tiktok: "TikTok Lite",
+        pf_tiktok_desc: "짧고 강렬한 숏폼 콘텐츠",
+        pf_x: "X",
+        pf_x_desc: "빠른 정보와 트렌드를 공유하는 채널",
+        work_threads_title: "스레드 인기 게시물",
+        work_threads_desc: "가장 많은 반응을 얻은 스레드",
+        work_tiktok_title: "틱톡 라이트 추천 영상",
+        work_tiktok_desc: "높은 조회수를 기록한 숏폼",
+        work_x_title: "X 실시간 트렌드",
+        work_x_desc: "가장 활발히 리포스트된 게시물"
     },
     en: {
         nav_home: "HOME",
@@ -67,7 +79,19 @@ const translations = {
         work_ig_title: "Instagram Popular Feed",
         work_ig_desc: "Posts that caught the eye with trendy visual effects",
         work_nb_title: "Naver Blog Review",
-        work_nb_desc: "Informative posts with the most active communication"
+        work_nb_desc: "Informative posts with the most active communication",
+        pf_threads: "Threads",
+        pf_threads_desc: "A space to freely share daily life and thoughts",
+        pf_tiktok: "TikTok Lite",
+        pf_tiktok_desc: "Short, intense, and engaging content",
+        pf_x: "X",
+        pf_x_desc: "A channel to share fast news and trends",
+        work_threads_title: "Threads Popular Posts",
+        work_threads_desc: "Threads that received the most reactions",
+        work_tiktok_title: "TikTok Lite Recommended Videos",
+        work_tiktok_desc: "Short-form videos with high views",
+        work_x_title: "X Real-time Trends",
+        work_x_desc: "The most actively reposted content"
     },
     zh: {
         nav_home: "首页",
@@ -102,7 +126,19 @@ const translations = {
         work_ig_title: "Instagram 人气动态",
         work_ig_desc: "以时尚视觉效果吸引眼球的帖子",
         work_nb_title: "Naver 博客测评",
-        work_nb_desc: "互动最活跃的实用信息文章"
+        work_nb_desc: "互动最活跃的实用信息文章",
+        pf_threads: "Threads",
+        pf_threads_desc: "自由分享日常生活与想法的空间",
+        pf_tiktok: "TikTok Lite",
+        pf_tiktok_desc: "简短、强烈且吸引人的短视频",
+        pf_x: "X",
+        pf_x_desc: "分享快速资讯与趋势的频道",
+        work_threads_title: "Threads 热门帖子",
+        work_threads_desc: "获得最多互动的 Threads",
+        work_tiktok_title: "TikTok Lite 推荐视频",
+        work_tiktok_desc: "高播放量的热门短视频",
+        work_x_title: "X 实时趋势",
+        work_x_desc: "转发最活跃的趋势内容"
     }
 };
 
