@@ -1,310 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BITNA Portfolio</title>
-    <meta name="description" content="빛나(Bitna)의 마케팅 포트폴리오 웹사이트입니다.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SNS 콘텐츠 마케터 문빛나의 포트폴리오. 콘텐츠 기획, 카드뉴스, 숏폼, 브랜드 톤앤매너, 성과 분석 프로젝트를 소개합니다."
+    />
+    <title>문빛나 | SNS 콘텐츠 마케터 포트폴리오</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;700&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- Top Navigation -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="#home">BITNA</a>
-        </div>
-        <div class="right-menu">
-            <nav class="nav-links">
-                <a href="#home" data-i18n="nav_home">HOME</a>
-                <a href="#about" data-i18n="nav_about">ABOUT</a>
-                <a href="#portfolio" data-i18n="nav_portfolio">PORTFOLIO</a>
-                <a href="#contact" data-i18n="nav_contact">CONTACT</a>
-            </nav>
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="zh">简体</button>
-            </div>
-        </div>
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="문빛나 포트폴리오 홈">
+        <span class="brand-mark">M</span>
+        <span>Moon Bitna</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#channels">Channels</a>
+        <a href="#work">Work</a>
+        <a href="#strategy">Strategy</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main>
-        <!-- Home Section with Parallax -->
-        <section id="home" class="parallax-section section-home">
-            <div class="overlay"></div>
-            <div class="content fade-in">
-                <h1>BITNA</h1>
-                <p data-i18n="home_role">Marketing Expert & Visual Storyteller</p>
-                <p class="subtitle" data-i18n="home_subtitle">Inspiring connections through strategic marketing.</p>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">SNS Content Marketer Portfolio</p>
+          <h1 id="hero-title">문빛나</h1>
+          <p class="hero-subtitle">관심을 읽고, 반응을 설계하는 콘텐츠 마케터</p>
+          <p class="hero-description">
+            네이버 블로그, 인스타그램, 유튜브 숏폼 등 다양한 플랫폼에서 실제 경험을
+            콘텐츠로 바꾸고 브랜드와 사람 사이의 연결을 만듭니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">프로젝트 보기</a>
+            <a class="button secondary" href="#contact">연락하기</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="문빛나 포트폴리오 히어로 이미지">
+          <img
+            src="assets/hero-moonlight-workspace.png"
+            alt="달빛이 비치는 콘텐츠 마케팅 작업 공간"
+          />
+        </div>
+      </section>
+
+      <section class="intro section-band" aria-labelledby="intro-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="intro-title">브랜드의 말투와 사람들의 반응 사이를 연결합니다.</h2>
+        </div>
+        <div class="intro-grid">
+          <article>
+            <span class="number">01</span>
+            <h3>경험 기반 콘텐츠</h3>
+            <p>맛집, 생활 정보, 일상 소재를 직접 경험한 언어로 풀어내 신뢰감 있는 콘텐츠를 만듭니다.</p>
+          </article>
+          <article>
+            <span class="number">02</span>
+            <h3>플랫폼별 기획</h3>
+            <p>블로그의 정보성, 인스타그램의 시각성, 숏폼의 속도감을 각각 다르게 설계합니다.</p>
+          </article>
+          <article>
+            <span class="number">03</span>
+            <h3>공감과 기억</h3>
+            <p>단순 홍보보다 사람들이 저장하고 다시 떠올릴 수 있는 메시지와 장면을 고민합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="channels" id="channels" aria-labelledby="channels-title">
+        <div class="section-heading">
+          <p class="eyebrow">Channels</p>
+          <h2 id="channels-title">운영 채널</h2>
+        </div>
+        <div class="channel-grid">
+          <a class="channel-card" href="https://youtube.com/channel/UCWoeEIxSUqy7-MSb45lcRIA?si=bQdAQ1sCOxC59BZl" target="_blank" rel="noreferrer">
+            <span>YouTube</span>
+            <strong>비주얼 스토리텔링과 숏폼 콘텐츠</strong>
+          </a>
+          <a class="channel-card" href="https://www.instagram.com/real_hoo_ki?igsh=eHY0OG1kbTg0ZnJ3&utm_source=qr" target="_blank" rel="noreferrer">
+            <span>Instagram</span>
+            <strong>다양한 콘텐츠와 소통이 있는 채널</strong>
+          </a>
+          <a class="channel-card" href="https://blog.naver.com/rof0411" target="_blank" rel="noreferrer">
+            <span>Naver Blog</span>
+            <strong>실제 경험을 바탕으로 한 리뷰 콘텐츠</strong>
+          </a>
+          <a class="channel-card" href="https://www.threads.com/@real_hoo_ki?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noreferrer">
+            <span>Threads</span>
+            <strong>일상과 생각을 나누는 소통 채널</strong>
+          </a>
+          <a class="channel-card" href="https://www.tiktok.com/@real_hoo_ki?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer">
+            <span>TikTok Lite</span>
+            <strong>짧고 강렬한 숏폼 콘텐츠</strong>
+          </a>
+          <a class="channel-card" href="https://x.com/real_hoo_ki?s=11" target="_blank" rel="noreferrer">
+            <span>X</span>
+            <strong>빠른 정보와 트렌드를 공유하는 채널</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="work section-band" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2 id="work-title">콘텐츠 마케터로 보여줄 수 있는 작업</h2>
+        </div>
+        <div class="project-grid">
+          <a class="project-card featured" href="https://blog.naver.com/rof0411/224242482229" target="_blank" rel="noreferrer">
+            <div class="project-meta">
+              <span>Naver Blog</span>
+              <span>Review</span>
             </div>
-        </section>
+            <h3>신뢰도 높은 리뷰 콘텐츠</h3>
+            <p>
+              직접 경험한 정보를 바탕으로 방문 전 궁금한 점을 해결해주는 리뷰형 콘텐츠를
+              구성했습니다. 검색 유입과 체류를 고려해 정보 구조를 정리했습니다.
+            </p>
+            <dl>
+              <div>
+                <dt>역할</dt>
+                <dd>경험 정리, 사진 선택, 정보 구조화, 제목/본문 카피</dd>
+              </div>
+              <div>
+                <dt>포인트</dt>
+                <dd>검색 의도, 신뢰감, 실제 방문 맥락</dd>
+              </div>
+            </dl>
+          </a>
 
-        <!-- About Section -->
-        <section id="about" class="content-section">
-            <div class="container">
-                <div class="about-grid fade-in">
-                    <div class="profile-placeholder">
-                        <img src="assets/profile.jpg" alt="빛나 프로필 사진" class="profile-img">
-                    </div>
-                    <div class="about-text">
-                        <h2 data-i18n="about_title">About</h2>
-                        <p data-i18n="about_p1">안녕하세요,<br>다양한 콘텐츠 플랫폼을 통해 브랜드와 사람을 연결하는 마케터 <strong>빛나</strong>입니다.</p>
-                        <p data-i18n="about_p2">네이버 블로그를 중심으로 맛집과 생활 정보를 전달하며,<br>실제 경험을 바탕으로 신뢰도 높은 콘텐츠를 제작하고 있습니다.</p>
-
-
-                        <p data-i18n="about_p4">단순한 홍보를 넘어,<br>사람들이 공감하고 기억할 수 있는 콘텐츠를 만드는 것을 목표로 합니다.</p>
-                    </div>
-                </div>
+          <a class="project-card" href="https://www.instagram.com/p/DXsnW4UFAoQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noreferrer">
+            <div class="project-meta">
+              <span>Instagram</span>
+              <span>Feed</span>
             </div>
-        </section>
+            <h3>시선을 끄는 인스타그램 피드</h3>
+            <p>이미지의 첫인상과 캡션 흐름을 함께 고려해 팔로워가 반응할 수 있는 게시물로 구성했습니다.</p>
+          </a>
 
-        <!-- Portfolio Section with Parallax -->
-        <section id="portfolio" class="parallax-section section-portfolio">
-            <div class="overlay"></div>
-            <div class="content fade-in">
-                <h2 data-i18n="portfolio_title">PORTFOLIO</h2>
-                <div class="album-gallery">
-                    <!-- YouTube Album -->
-                    <a href="https://youtube.com/channel/UCWoeEIxSUqy7-MSb45lcRIA?si=bQdAQ1sCOxC59BZl" target="_blank"
-                        class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-yt">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-yt">
-                                <svg class="brand-logo" viewBox="0 0 24 24" fill="#ffffff" width="60" height="60">
-                                    <path
-                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_youtube">YouTube</h3>
-                            <p data-i18n="pf_yt_desc">빛나의 마케팅 전략과 비주얼 스토리텔링 채널</p>
-                        </div>
-                    </a>
-
-                    <!-- Instagram Album -->
-                    <a href="https://www.instagram.com/real_hoo_ki?igsh=eHY0OG1kbTg0ZnJ3&utm_source=qr" target="_blank" class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-ig">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-ig">
-                                <svg class="brand-logo" viewBox="0 0 24 24" fill="#ffffff" width="60" height="60">
-                                    <path
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_instagram">Instagram</h3>
-                            <p data-i18n="pf_ig_desc">다양한 콘텐츠와 소통이 있는 인스타그램 채널</p>
-                        </div>
-                    </a>
-
-                    <!-- Naver Blog Album -->
-                    <a href="https://blog.naver.com/rof0411" target="_blank" class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-nb">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-nb">
-                                <div class="naver-logo">N</div>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_naverblog">Naver Blog</h3>
-                            <p data-i18n="pf_nb_desc">실제 경험을 바탕으로 한 신뢰도 높은 리뷰 콘텐츠</p>
-                        </div>
-                    </a>
-
-                    <!-- Threads Album -->
-                    <a href="https://www.threads.com/@real_hoo_ki?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-threads">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-threads">
-                                <div class="naver-logo">@</div>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_threads">Threads</h3>
-                            <p data-i18n="pf_threads_desc">일상과 생각을 자유롭게 나누는 공간</p>
-                        </div>
-                    </a>
-
-                    <!-- TikTok Lite Album -->
-                    <a href="https://www.tiktok.com/@real_hoo_ki?is_from_webapp=1&sender_device=pc" target="_blank" class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-tiktok">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-tiktok">
-                                <div class="naver-logo">♪</div>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_tiktok">TikTok Lite</h3>
-                            <p data-i18n="pf_tiktok_desc">짧고 강렬한 숏폼 콘텐츠</p>
-                        </div>
-                    </a>
-
-                    <!-- X (Twitter) Album -->
-                    <a href="https://x.com/real_hoo_ki?s=11" target="_blank" class="album-card">
-                        <div class="album-art-container">
-                            <div class="vinyl-record vinyl-x">
-                                <div class="inner-label"></div>
-                            </div>
-                            <div class="album-cover cover-x">
-                                <div class="naver-logo">X</div>
-                            </div>
-                        </div>
-                        <div class="album-info">
-                            <h3 data-i18n="pf_x">X</h3>
-                            <p data-i18n="pf_x_desc">빠른 정보와 트렌드를 공유하는 채널</p>
-                        </div>
-                    </a>
-                </div>
+          <a class="project-card" href="https://youtube.com/shorts/z1hk8MqQsUs?si=_ZKS9kGboOKTjdYg" target="_blank" rel="noreferrer">
+            <div class="project-meta">
+              <span>YouTube</span>
+              <span>Shorts</span>
             </div>
-        </section>
+            <h3>공감을 얻은 숏폼 콘텐츠</h3>
+            <p>짧은 시간 안에 핵심 장면과 메시지가 전달되도록 영상 흐름과 시청 포인트를 설계했습니다.</p>
+          </a>
 
-        <!-- Highlights Section -->
-        <section id="highlights" class="content-section" style="background:#fff;">
-            <div class="container fade-in">
-                <div class="contact-header text-center">
-                    <h2 data-i18n="works_title">HIGHLIGHTS</h2>
-                    <p data-i18n="works_subdesc">각 채널별 가장 뜨거웠던 주요 콘텐츠를 확인해보세요.</p>
-                </div>
-
-                <div class="works-grid">
-                    <!-- YouTube Highlight -->
-                    <a href="https://youtube.com/shorts/z1hk8MqQsUs?si=_ZKS9kGboOKTjdYg" target="_blank"
-                        class="work-card">
-                        <div class="work-thumb thumb-yt" style="padding: 0; border: none; background: transparent;">
-                            <img src="assets/lp_yt.jpg" alt="YouTube Highlight LP">
-                        </div>
-                        <div class="work-info">
-                            <h3 data-i18n="work_yt_title">유튜브 주요 영상</h3>
-                            <p data-i18n="work_yt_desc">높은 조회수로 공감을 얻은 핫한 콘텐츠</p>
-                        </div>
-                    </a>
-
-                    <!-- Instagram Highlight -->
-                    <a href="https://www.instagram.com/p/DXsnW4UFAoQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                        target="_blank" class="work-card">
-                        <div class="work-thumb thumb-ig" style="padding: 0; border: none; background: transparent;">
-                            <img src="assets/lp_ig.jpg" alt="Instagram Highlight LP">
-                        </div>
-                        <div class="work-info">
-                            <h3 data-i18n="work_ig_title">인스타그램 인기 피드</h3>
-                            <p data-i18n="work_ig_desc">트렌디한 시각 효과로 시선을 사로잡은 게시물</p>
-                        </div>
-                    </a>
-
-                    <!-- Naver Blog Highlight -->
-                    <a href="https://blog.naver.com/rof0411/224242482229" target="_blank" class="work-card">
-                        <div class="work-thumb thumb-nb" style="padding: 0; border: none; background: transparent;">
-                            <img src="assets/lp_nb.jpg" alt="Naver Blog Highlight LP">
-                        </div>
-                        <div class="work-info">
-                            <h3 data-i18n="work_nb_title">네이버 블로그 리뷰</h3>
-                            <p data-i18n="work_nb_desc">가장 활발한 소통이 이루어진 유익한 정보글</p>
-                        </div>
-                    </a>
-
-
-                </div>
+          <article class="project-card">
+            <div class="project-meta">
+              <span>Brand Voice</span>
+              <span>Copy</span>
             </div>
-        </section>
+            <h3>브랜드 톤앤매너 설계</h3>
+            <p>채널별 말투와 표현을 정리해 콘텐츠가 한 사람의 목소리처럼 일관되게 느껴지도록 만듭니다.</p>
+          </article>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="content-section grey-bg">
-            <div class="container fade-in">
-                <div class="contact-header text-center">
-                    <h2 data-i18n="contact_title">Contact</h2>
-                    <p data-i18n="contact_subdesc">궁금한 점이 있으신가요? 편하게 남겨주시면 빠른 시간 내 답변 드리겠습니다.</p>
-                </div>
+      <section class="strategy" id="strategy" aria-labelledby="strategy-title">
+        <div class="section-heading">
+          <p class="eyebrow">Strategy</p>
+          <h2 id="strategy-title">콘텐츠 하나를 만들 때 보는 네 가지 질문</h2>
+        </div>
+        <ol class="strategy-list">
+          <li>
+            <span>Target</span>
+            <strong>누가 이 콘텐츠를 멈춰 볼까?</strong>
+            <p>연령, 관심사, 상황, 플랫폼 사용 맥락을 먼저 정의합니다.</p>
+          </li>
+          <li>
+            <span>Hook</span>
+            <strong>첫 장면에서 어떤 감정을 건드릴까?</strong>
+            <p>공감, 궁금증, 이득, 문제 해결 중 가장 강한 진입점을 선택합니다.</p>
+          </li>
+          <li>
+            <span>Flow</span>
+            <strong>끝까지 보게 만드는 구조는 무엇일까?</strong>
+            <p>문제 제기, 정보 정리, 사례, 행동 유도 순서로 설득력을 만듭니다.</p>
+          </li>
+          <li>
+            <span>Signal</span>
+            <strong>성과는 어떤 지표로 판단할까?</strong>
+            <p>조회수만이 아니라 저장, 댓글, 공유, 프로필 클릭을 함께 봅니다.</p>
+          </li>
+        </ol>
+      </section>
 
-                <div class="contact-card">
-                    <div class="contact-left">
-                        <div class="contact-info-block">
-                            <h3 data-i18n="contact_value_title">가치관 혹은 소통</h3>
-                            <hr class="contact-divider">
-                            <p data-i18n="contact_value_desc">따뜻한 이야기와 영감을 함께 나눌 <br>멋진 제안을 기다립니다.</p>
-                        </div>
-                        <div class="contact-info-block mt-4">
-                            <h3 class="gold-text">Email</h3>
-                            <p>qlcsk0411@naver.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-right">
-                        <form class="contact-form" action="mailto:qlcsk0411@naver.com" method="post"
-                            enctype="text/plain">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <input type="text" id="name" name="name" placeholder="이름" required
-                                        data-i18n-placeholder="contact_name_ph">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" name="email" placeholder="이메일" required
-                                        data-i18n-placeholder="contact_email_ph">
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea id="message" name="message" placeholder="어떤 이야기를 나누고 싶으신가요?" required
-                                    data-i18n-placeholder="contact_message_ph"></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn" data-i18n="contact_line_submit">메시지 보내기</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="skills section-band" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title">기획부터 발행 후 개선까지</h2>
+        </div>
+        <div class="skills-layout">
+          <div class="skill-column">
+            <h3>Planning</h3>
+            <ul>
+              <li>콘텐츠 캘린더</li>
+              <li>타깃 분석</li>
+              <li>트렌드 리서치</li>
+              <li>캠페인 메시지 설계</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>Production</h3>
+            <ul>
+              <li>카드뉴스 구성</li>
+              <li>숏폼 스크립트</li>
+              <li>캡션 카피라이팅</li>
+              <li>리뷰 콘텐츠 작성</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>Tools</h3>
+            <ul>
+              <li>Instagram</li>
+              <li>Naver Blog</li>
+              <li>YouTube Shorts</li>
+              <li>Canva / Figma</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">브랜드가 더 잘 말하도록 돕는 콘텐츠를 만들겠습니다.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:qlcsk0411@naver.com">qlcsk0411@naver.com</a>
+          <a class="button secondary" href="https://github.com/rofnine/moonlight" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 BITNA Portfolio. All rights reserved.</p>
+    <footer class="footer">
+      <p>© 2026 Moon Bitna. SNS Content Marketer Portfolio.</p>
+      <a href="#top">Back to top</a>
     </footer>
 
-    <!-- Language Translation Script -->
-    <script src="lang.js"></script>
-
-    <!-- Animations Script -->
-    <script>
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-
-    </script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
