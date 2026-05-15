@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | MOON BITNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      height: auto !important;
+      min-height: 100%;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      background: #111 url('assets/art_bg_2_1778838351889.png') center / cover fixed no-repeat;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.76);
+      z-index: 1;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 140px 40px 100px;
+      text-align: left;
+    }
+
+    .works-header {
+      margin-bottom: 54px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 30px;
+    }
+
+    .page-title {
+      font-size: 16px;
+      letter-spacing: 4px;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .works-name {
+      font-size: clamp(34px, 5vw, 52px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .works-role {
+      max-width: 860px;
+      font-size: 18px;
+      letter-spacing: 1.4px;
+      color: #ccc;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .work-section {
+      margin-top: 62px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.65);
+      text-transform: uppercase;
+    }
+
+    .more-link {
+      flex: 0 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      padding: 8px 12px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .more-link:hover {
+      border-color: rgba(255, 255, 255, 0.65);
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .section-note {
+      max-width: 840px;
+      margin: -6px 0 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .work-card {
+      min-height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .work-card:hover {
+      border-color: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.11);
+      transform: translateY(-2px);
+    }
+
+    .work-image-link {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 210px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .work-copy {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 14px;
+      padding: 24px;
+    }
+
+    .card-kicker {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.58);
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 700;
+      word-break: keep-all;
+    }
+
+    .card-copy {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .keyword-list span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .work-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .work-link::after {
+      content: '->';
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    @media (max-width: 980px) {
+      .works-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding-left: 12px;
+        padding-right: 12px;
+        overflow: hidden;
+      }
+
+      .header-right {
+        width: 100%;
+      }
+
+      .nav-links {
+        width: 100%;
+        max-width: 340px;
+        gap: 10px;
+        font-size: 11px;
+      }
+
+      .content-wrapper {
+        width: 100vw;
+        max-width: 100vw;
+        padding: 180px 18px 72px;
+        overflow-x: hidden;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .works-name {
+        font-size: 30px;
+        letter-spacing: 1px;
+        overflow-wrap: anywhere;
+      }
+
+      .works-role,
+      .section-note,
+      .card-copy {
+        letter-spacing: 0;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-copy {
+        padding: 22px;
+      }
+
+      .card-title {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .content-wrapper {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .nav-links {
+        max-width: 300px;
+        gap: 8px;
+        font-size: 10px;
+      }
+
+      .nav-links a {
+        letter-spacing: 0.5px;
+      }
+
+      .works-name {
+        font-size: 28px;
+      }
+
+      .works-role {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <header class="site-header">
+    <div class="logo"><a href="index.html">MOON BITNA</a></div>
+    <div class="header-right">
+      <div class="lang-switch">
+        <a href="#" data-lang="en" class="active">EN</a>
+        <a href="#" data-lang="ko">KO</a>
+        <a href="#" data-lang="ja">JA</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html#slide-1" class="i18n" data-en="PROFILE" data-ko="프로필" data-ja="プロフィール">PROFILE</a>
+        <a href="index.html#slide-2" class="i18n" data-en="PROJECTS" data-ko="프로젝트" data-ja="プロジェクト">PROJECTS</a>
+        <a href="index.html#slide-3" class="i18n" data-en="WORKS" data-ko="작업물" data-ja="ワークス">WORKS</a>
+        <a href="index.html#slide-4" class="i18n" data-en="STRATEGY" data-ko="전략" data-ja="戦略">STRATEGY</a>
+        <a href="index.html#slide-5" class="i18n" data-en="CONTACT" data-ko="연락처" data-ja="連絡先">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="works-header">
+      <h1 class="page-title i18n" data-en="WORKS" data-ko="작업물" data-ja="ワークス">WORKS</h1>
+      <h2 class="works-name i18n" data-en="VISUAL CONTENT ARCHIVE" data-ko="비주얼 콘텐츠 아카이브" data-ja="ビジュアルコンテンツアーカイブ">VISUAL CONTENT ARCHIVE</h2>
+      <p class="works-role i18n" data-en="Selected works across blog, Instagram, YouTube Shorts, and personal poster experiments. Each card summarizes what the post contains and links to the original work." data-ko="블로그, 인스타그램, 유튜브 쇼츠, 개인 포스터 작업물을 선별해 정리했습니다. 각 카드는 게시글의 주요 내용과 원본 링크를 중심으로 보여줍니다." data-ja="ブログ、Instagram、YouTube Shorts、個人ポスター作品を選んで整理しました。各カードは投稿の主な内容と元リンクを中心に表示します。">Selected works across blog, Instagram, YouTube Shorts, and personal poster experiments. Each card summarizes what the post contains and links to the original work.</p>
+    </section>
+
+    <div id="works-root"></div>
+  </main>
+
+  <script>
+    const LANG_KEY = 'moonBitnaLang';
+    const supportedLangs = ['en', 'ko', 'ja'];
+
+    const sections = [
+          {
+                "id": "food-blog-works",
+                "title": "Restaurant Blog Works",
+                "type": "foodBlog",
+                "note": {
+                      "en": "Posts from the restaurant blog, organized around local food reviews and search-friendly representative images.",
+                      "ko": "맛집 블로그의 포스팅입니다. 로컬 맛집 리뷰와 검색에 잘 잡히는 대표 이미지를 중심으로 정리했습니다.",
+                      "ja": "グルメブログの投稿です。ローカル店レビューと検索に強い代表画像を中心に整理しました。"
+                },
+                "cards": [
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfMjgx/MDAxNzc4NzIyMzA1NzM3.2OxB9nOZE9Pfha56jn8-z7fAQIbAOKJ07ykwYp9JJVcg._c32RslYIQfq-GWenNnWThAgiEeee78h6733cZmC_ykg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_10_31_20.png?type=s3",
+                            "link": "https://blog.naver.com/rof0411/224285304314",
+                            "kicker": "Restaurant Blog / Naver Post",
+                            "title": {
+                                  "en": "Restaurant Blog #1: 천안 원성동 맛집 손의손, 불향 가득한 주꾸미와 양지 철판의 완벽한 조화(ft. 주차, 메뉴)",
+                                  "ko": "천안 원성동 맛집 손의손, 불향 가득한 주꾸미와 양지 철판의 완벽한 조화(ft. 주차, 메뉴)",
+                                  "ja": "グルメブログ #1: 천안 원성동 맛집 손의손, 불향 가득한 주꾸미와 양지 철판의 완벽한 조화(ft. 주차, 메뉴)"
+                            },
+                            "copy": {
+                                  "en": "A concise Restaurant Blog summary focused on the visit context, menu or place appeal, and search keywords such as 천안원성동맛집, 천안주꾸미맛집, 원성동외식장소, 천안손의손.",
+                                  "ko": "맛집 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 천안원성동맛집, 천안주꾸미맛집, 원성동외식장소, 천안손의손를 중심으로 방문 전 확인할 메뉴, 분위기, 추천 포인트를 빠르게 볼 수 있는 글입니다.",
+                                  "ja": "グルメブログの投稿内容をそのまま転載せず、要点だけ整理しました。천안원성동맛집, 천안주꾸미맛집, 원성동외식장소, 천안손의손を中心に、訪問前に確認したいメニュー、雰囲気、おすすめポイントを把握できます。"
+                            },
+                            "keywords": [
+                                  "천안원성동맛집",
+                                  "천안주꾸미맛집",
+                                  "원성동외식장소"
+                            ]
+                      },
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNDQg/MDAxNzc4NzMyMTkyMjQ0.waIOJVhZWlbEOSaiLbhmuM98vpp4cNf1UDN1noXYnWwg.A3ySGz2dnF-dcxoxaovln0Ty-kljjUXvt0a3UNye6k0g.JPEG/KakaoTalk_20260514_124027667_06.jpg?type=s3",
+                            "link": "https://blog.naver.com/rof0411/224285223200",
+                            "kicker": "Restaurant Blog / Naver Post",
+                            "title": {
+                                  "en": "Restaurant Blog #2: 천안 구성동 대명식당, 고봉밥 부르는 짜글이 내돈내산 후기",
+                                  "ko": "천안 구성동 대명식당, 고봉밥 부르는 짜글이 내돈내산 후기",
+                                  "ja": "グルメブログ #2: 천안 구성동 대명식당, 고봉밥 부르는 짜글이 내돈내산 후기"
+                            },
+                            "copy": {
+                                  "en": "A concise Restaurant Blog summary focused on the visit context, menu or place appeal, and search keywords such as 천안맛집, 구성동맛집, 구성동맛집추천, 대명식당.",
+                                  "ko": "맛집 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 천안맛집, 구성동맛집, 구성동맛집추천, 대명식당를 중심으로 방문 전 확인할 메뉴, 분위기, 추천 포인트를 빠르게 볼 수 있는 글입니다.",
+                                  "ja": "グルメブログの投稿内容をそのまま転載せず、要点だけ整理しました。천안맛집, 구성동맛집, 구성동맛집추천, 대명식당を中心に、訪問前に確認したいメニュー、雰囲気、おすすめポイントを把握できます。"
+                            },
+                            "keywords": [
+                                  "천안맛집",
+                                  "구성동맛집",
+                                  "구성동맛집추천"
+                            ]
+                      },
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNzYg/MDAxNzc4NzI5NTU4NTcw.pomGlcr27WcDl2_TSKBfRrw-_V4HnwDY48R6imcwuNwg.-DkzVy0dCoFe2dqwx2yQu1su33eHxEXGtE5f7di-m-Ag.JPEG/KakaoTalk_20260514_115535458_09.jpg?type=s3",
+                            "link": "https://blog.naver.com/rof0411/224285180012",
+                            "kicker": "Restaurant Blog / Naver Post",
+                            "title": {
+                                  "en": "Restaurant Blog #3: 파주 운정 먹통커피, 조용하게 힐링하기 좋은 우드톤 감성 카페 추천",
+                                  "ko": "파주 운정 먹통커피, 조용하게 힐링하기 좋은 우드톤 감성 카페 추천",
+                                  "ja": "グルメブログ #3: 파주 운정 먹통커피, 조용하게 힐링하기 좋은 우드톤 감성 카페 추천"
+                            },
+                            "copy": {
+                                  "en": "A concise Restaurant Blog summary focused on the visit context, menu or place appeal, and search keywords such as 파주운정먹통커피, 파주운정카페, 파주먹통커피, 운정카페추천.",
+                                  "ko": "맛집 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 파주운정먹통커피, 파주운정카페, 파주먹통커피, 운정카페추천를 중심으로 방문 전 확인할 메뉴, 분위기, 추천 포인트를 빠르게 볼 수 있는 글입니다.",
+                                  "ja": "グルメブログの投稿内容をそのまま転載せず、要点だけ整理しました。파주운정먹통커피, 파주운정카페, 파주먹통커피, 운정카페추천を中心に、訪問前に確認したいメニュー、雰囲気、おすすめポイントを把握できます。"
+                            },
+                            "keywords": [
+                                  "파주운정먹통커피",
+                                  "파주운정카페",
+                                  "파주먹통커피"
+                            ]
+                      }
+                ]
+          },
+          {
+                "id": "cleaning-blog-works",
+                "title": "Move-in Cleaning Blog Works",
+                "type": "cleaningBlog",
+                "note": {
+                      "en": "Posts from the move-in cleaning blog, focused on new-home dust, bathrooms, window tracks, and practical home-care information.",
+                      "ko": "입주청소 블로그의 포스팅입니다. 신축 먼지, 욕실, 창틀, 홈케어 정보를 중심으로 정리했습니다.",
+                      "ja": "入居清掃ブログの投稿です。新築のほこり、浴室、窓枠、ホームケア情報を中心に整理しました。"
+                },
+                "cards": [
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNDgg/MDAxNzc4NzE5Mjk1MjQ0.-JeQgZhYJ8L1w0dGUcdv1Znx8sWSnKUGgbzzDmJXpIog.9bjkwg-ywkmGeI5krS7E1R4H0sW_NSBhnBgTIzcNsWIg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_09_41_13.png?type=s3",
+                            "link": "https://blog.naver.com/rofnine/224284993692",
+                            "kicker": "Cleaning Blog / Naver Post",
+                            "title": {
+                                  "en": "Move-in Cleaning Blog #1: 새 아파트 욕실에서 하얀 가루가 나오는 이유!",
+                                  "ko": "새 아파트 욕실에서 하얀 가루가 나오는 이유!",
+                                  "ja": "入居清掃ブログ #1: 새 아파트 욕실에서 하얀 가루가 나오는 이유!"
+                            },
+                            "copy": {
+                                  "en": "A concise Move-in Cleaning Blog summary focused on practical cleaning concerns, service checkpoints, and keywords such as 천안입주청소, 아산입주청소, 천안청소업체, 아산청소업체.",
+                                  "ko": "입주청소 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 천안입주청소, 아산입주청소, 천안청소업체, 아산청소업체 관련 문제, 점검 포인트, 서비스 선택 기준을 빠르게 파악할 수 있는 글입니다.",
+                                  "ja": "入居清掃ブログの投稿内容をそのまま転載せず、要点だけ整理しました。천안입주청소, 아산입주청소, 천안청소업체, 아산청소업체に関する問題、確認ポイント、サービス選びの基準を把握できます。"
+                            },
+                            "keywords": [
+                                  "천안입주청소",
+                                  "아산입주청소",
+                                  "천안청소업체"
+                            ]
+                      },
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfMTgg/MDAxNzc4NjkxMTUwNDA1.QYgKfD4wi9imBIH34Gpuvis5YwVdgV4W43eIP5ByYF8g.__F9cNFcxMhCfybOy_7DkYm73SA83taNfe2Vfo9ojsAg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_01_52_15.png?type=s3",
+                            "link": "https://blog.naver.com/rofnine/224284773479",
+                            "kicker": "Cleaning Blog / Naver Post",
+                            "title": {
+                                  "en": "Move-in Cleaning Blog #2: 새집인데 먼지가 이렇게 많다고? 천안 아산 입주청소 전문 두껍아 두껍아",
+                                  "ko": "새집인데 먼지가 이렇게 많다고? 천안 아산 입주청소 전문 두껍아 두껍아",
+                                  "ja": "入居清掃ブログ #2: 새집인데 먼지가 이렇게 많다고? 천안 아산 입주청소 전문 두껍아 두껍아"
+                            },
+                            "copy": {
+                                  "en": "A concise Move-in Cleaning Blog summary focused on practical cleaning concerns, service checkpoints, and keywords such as 천안입주청소, 아산입주청소, 천안아산입주청소, 입주청소전문.",
+                                  "ko": "입주청소 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 천안입주청소, 아산입주청소, 천안아산입주청소, 입주청소전문 관련 문제, 점검 포인트, 서비스 선택 기준을 빠르게 파악할 수 있는 글입니다.",
+                                  "ja": "入居清掃ブログの投稿内容をそのまま転載せず、要点だけ整理しました。천안입주청소, 아산입주청소, 천안아산입주청소, 입주청소전문に関する問題、確認ポイント、サービス選びの基準を把握できます。"
+                            },
+                            "keywords": [
+                                  "천안입주청소",
+                                  "아산입주청소",
+                                  "천안아산입주청소"
+                            ]
+                      },
+                      {
+                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTNfMjI5/MDAxNzc4NjgzNzc4OTkx.Xkg0Lr9wHffdpLfnNQZcDLVb9IcB1zsMCURbgUlI4rYg.XICr_pprYsyqXSh2rnWjmfuyx33nbWuTjfECeFnoYWsg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_13%C0%CF_%BF%C0%C8%C4_11_49_26.png?type=s3",
+                            "link": "https://blog.naver.com/rofnine/224284701623",
+                            "kicker": "Cleaning Blog / Naver Post",
+                            "title": {
+                                  "en": "Move-in Cleaning Blog #3: 입주청소, 그냥 “먼지 닦는 청소”가 아니에요! ✨",
+                                  "ko": "입주청소, 그냥 “먼지 닦는 청소”가 아니에요! ✨",
+                                  "ja": "入居清掃ブログ #3: 입주청소, 그냥 “먼지 닦는 청소”가 아니에요! ✨"
+                            },
+                            "copy": {
+                                  "en": "A concise Move-in Cleaning Blog summary focused on practical cleaning concerns, service checkpoints, and keywords such as 이사청소, 새집청소, 입주전청소, 청소꿀팁.",
+                                  "ko": "입주청소 블로그 포스팅을 그대로 옮기지 않고 핵심만 정리했습니다. 이사청소, 새집청소, 입주전청소, 청소꿀팁 관련 문제, 점검 포인트, 서비스 선택 기준을 빠르게 파악할 수 있는 글입니다.",
+                                  "ja": "入居清掃ブログの投稿内容をそのまま転載せず、要点だけ整理しました。이사청소, 새집청소, 입주전청소, 청소꿀팁に関する問題、確認ポイント、サービス選びの基準を把握できます。"
+                            },
+                            "keywords": [
+                                  "이사청소",
+                                  "새집청소",
+                                  "입주전청소"
+                            ]
+                      }
+                ]
+          },
+          {
+                "id": "instagram-works",
+                "title": "Instagram Works",
+                "type": "instagram",
+                "note": {
+                      "en": "Instagram cards use the supplied work images and link to the exact post URLs provided.",
+                      "ko": "인스타그램 카드는 제공된 작업물 이미지를 사용하고, 요청한 개별 게시글 URL로 연결했습니다.",
+                      "ja": "Instagramカードは提供画像を使用し、指定された個別投稿URLへ接続しています。"
+                },
+                "cards": [
+                      {
+                            "image": "assets/works/instagram-01.png",
+                            "link": "https://www.instagram.com/p/DXvV5wzEQDz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            "kicker": "Instagram / Trend Report",
+                            "title": {
+                                  "en": "SNS Trend at a Glance",
+                                  "ko": "SNS 트렌드 한눈에",
+                                  "ja": "SNSトレンドを一目で"
+                            },
+                            "copy": {
+                                  "en": "A save-friendly carousel that turns SNS trend information into charts, icons, and short visual summaries.",
+                                  "ko": "SNS 트렌드를 차트, 아이콘, 짧은 문장으로 정리한 저장형 인포그래픽 카드입니다.",
+                                  "ja": "SNSトレンドを図表、アイコン、短い文で整理した保存向きのカードです。"
+                            },
+                            "keywords": [
+                                  "SNS Trend",
+                                  "Infographic",
+                                  "Save"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/instagram-02.png",
+                            "link": "https://www.instagram.com/p/DYEHNmVERKN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            "kicker": "Instagram / Fashion Tip",
+                            "title": {
+                                  "en": "Model-fit Styling Difference",
+                                  "ko": "모델핏을 만드는 스타일 차이",
+                                  "ja": "モデルフィットを作る違い"
+                            },
+                            "copy": {
+                                  "en": "A fashion-tip card comparing styling choices so viewers can quickly apply the lesson to their own outfits.",
+                                  "ko": "스타일링의 차이를 비교해 자신의 옷차림에 바로 적용할 수 있도록 만든 패션 팁 카드입니다.",
+                                  "ja": "スタイリングの違いを比較し、自分の服装に応用しやすくしたカードです。"
+                            },
+                            "keywords": [
+                                  "Fashion",
+                                  "Styling",
+                                  "Before After"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/instagram-03.png",
+                            "link": "https://www.instagram.com/p/DXsnW4UFAoQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                            "kicker": "Instagram / Place Review",
+                            "title": {
+                                  "en": "Local Restaurant Mini Tour",
+                                  "ko": "로컬 맛집 미니 투어",
+                                  "ja": "ローカル店ミニツアー"
+                            },
+                            "copy": {
+                                  "en": "A compact place-review post combining real location visuals, local context, and quick recommendation cues.",
+                                  "ko": "실제 장소 이미지, 지역 맥락, 짧은 추천 포인트를 함께 보여주는 장소 리뷰 콘텐츠입니다.",
+                                  "ja": "実際の場所、地域文脈、短い推薦ポイントをまとめた場所レビューです。"
+                            },
+                            "keywords": [
+                                  "Place Review",
+                                  "Local",
+                                  "Food Tour"
+                            ]
+                      }
+                ]
+          },
+          {
+                "id": "youtube-works",
+                "title": "YouTube Works",
+                "type": "youtube",
+                "note": {
+                      "en": "YouTube cards show the latest three Shorts found in the public channel RSS feed, with matching thumbnails and direct Shorts links.",
+                      "ko": "유튜브 카드는 공개 채널 RSS에서 확인한 최신 쇼츠 3개를 썸네일과 직접 링크로 연결했습니다.",
+                      "ja": "YouTubeカードは公開チャンネルRSSで確認した最新Shorts 3本を表示しています。"
+                },
+                "cards": [
+                      {
+                            "image": "assets/works/youtube-01.jpg",
+                            "link": "https://www.youtube.com/shorts/SR4pSQxtciU",
+                            "kicker": "YouTube Shorts / Communication",
+                            "title": {
+                                  "en": "Why Good Talkers Can Hurt Relationships",
+                                  "ko": "말 잘하는 사람이 관계를 망치는 이유",
+                                  "ja": "話し上手が関係を壊す理由"
+                            },
+                            "copy": {
+                                  "en": "A motivation and communication Short about how the way a message is carried can affect relationships.",
+                                  "ko": "말의 내용보다 전달 방식이 관계에 어떤 영향을 주는지 다루는 커뮤니케이션 쇼츠입니다.",
+                                  "ja": "言葉の内容よりも伝え方が関係に与える影響を扱うShortsです。"
+                            },
+                            "keywords": [
+                                  "Communication",
+                                  "Motivation",
+                                  "Relationships"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/youtube-02.jpg",
+                            "link": "https://www.youtube.com/shorts/FAcQmF-AiDU",
+                            "kicker": "YouTube Shorts / Habit Design",
+                            "title": {
+                                  "en": "Why Strict Routines Collapse Faster",
+                                  "ko": "루틴 빡빡할수록 더 빨리 무너지는 이유",
+                                  "ja": "厳しいルーティンほど崩れやすい理由"
+                            },
+                            "copy": {
+                                  "en": "A self-improvement Short about routine failure, the 21-day habit myth, and practical habit design.",
+                                  "ko": "루틴 실패, 21일 법칙의 오해, 실천 가능한 습관 설계를 다루는 자기계발 쇼츠입니다.",
+                                  "ja": "ルーティンの失敗、21日ルールの誤解、実践的な習慣設計を扱うShortsです。"
+                            },
+                            "keywords": [
+                                  "Habit",
+                                  "Routine",
+                                  "Productivity"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/youtube-03.jpg",
+                            "link": "https://www.youtube.com/shorts/z1hk8MqQsUs",
+                            "kicker": "YouTube Shorts / Psychology",
+                            "title": {
+                                  "en": "The Power of Silence in a Conversation",
+                                  "ko": "상대방의 항복을 받아내는 가장 무서운 방법",
+                                  "ja": "会話で沈黙が持つ力"
+                            },
+                            "copy": {
+                                  "en": "A psychology-themed Short explaining how silence and pauses can change the pressure inside a conversation.",
+                                  "ko": "침묵과 대화의 빈틈이 상대에게 어떤 압박으로 느껴지는지 다루는 심리학 쇼츠입니다.",
+                                  "ja": "沈黙や会話の間が相手に与える圧力を扱う心理学系Shortsです。"
+                            },
+                            "keywords": [
+                                  "Psychology",
+                                  "Silence",
+                                  "Shorts"
+                            ]
+                      }
+                ]
+          },
+          {
+                "id": "poster-works",
+                "title": "Poster Works",
+                "type": "poster",
+                "note": {
+                      "en": "Representative poster sets are linked to grouped gallery pages. Each card opens a two-image post where the related posters appear together.",
+                      "ko": "대표 포스터 묶음은 각각 갤러리 상세페이지로 연결됩니다. 카드를 누르면 연관 포스터 2장이 한 게시글처럼 함께 보입니다.",
+                      "ja": "代表ポスターセットはギャラリー詳細ページへ接続します。カードを押すと関連ポスター2枚が一つの投稿のように表示されます。"
+                },
+                "cards": [
+                      {
+                            "image": "assets/works/posters/newera-01.jpg",
+                            "link": "poster-detail.html?id=newera",
+                            "kicker": "Poster Works / 2-Piece Set",
+                            "title": {
+                                  "en": "New Era Cap Promotion Set",
+                                  "ko": "뉴에라 모자 프로모션 포스터",
+                                  "ja": "ニューエラキャッププロモーション"
+                            },
+                            "copy": {
+                                  "en": "A cap promotion poster set that explores both fashion-editorial and webtoon-style advertising directions for a summer item.",
+                                  "ko": "여름 패션 아이템인 뉴에라 모자를 패션 에디토리얼 톤과 웹툰형 광고 톤으로 각각 풀어낸 프로모션 포스터입니다.",
+                                  "ja": "夏のファッションアイテムであるニューエラキャップを、ファッション編集風とウェブトゥーン広告風で展開したポスターです。"
+                            },
+                            "keywords": [
+                                  "Poster",
+                                  "Fashion",
+                                  "Promotion"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/posters/blackbori-01.png",
+                            "link": "poster-detail.html?id=blackbori",
+                            "kicker": "Poster Works / 2-Piece Set",
+                            "title": {
+                                  "en": "Black Bori Product Poster Set",
+                                  "ko": "블랙보리 제품 포스터",
+                                  "ja": "ブラックボリ商品ポスター"
+                            },
+                            "copy": {
+                                  "en": "A beverage product poster set focused on pack-shot recognition, rich barley color, and a simple contrast between depth and lightness.",
+                                  "ko": "제품 패키지 인지, 보리차의 깊은 색감, 가볍고 진한 대비 메시지를 중심으로 구성한 음료 제품 포스터입니다.",
+                                  "ja": "商品の認知、麦茶の深い色味、軽さと濃さの対比メッセージを中心に構成した飲料商品ポスターです。"
+                            },
+                            "keywords": [
+                                  "Poster",
+                                  "Product",
+                                  "Beverage"
+                            ]
+                      },
+                      {
+                            "image": "assets/works/posters/solo-01.jpg",
+                            "link": "poster-detail.html?id=solo",
+                            "kicker": "Poster Works / 2-Piece Set",
+                            "title": {
+                                  "en": "Solo Run Bilingual Event Poster",
+                                  "ko": "솔로런 한영 포스터",
+                                  "ja": "ソロラン日英イベントポスター"
+                            },
+                            "copy": {
+                                  "en": "A Korean and English version of an event poster using bold hot-pink typography and black-and-white running imagery to emphasize energy and participation.",
+                                  "ko": "강한 핫핑크 타이포그래피와 흑백 러닝 이미지를 활용해 에너지와 참여 메시지를 강조한 솔로런 포스터 한영 버전입니다.",
+                                  "ja": "鮮やかなピンクのタイポグラフィと白黒のランニング写真で、エネルギーと参加メッセージを強調した韓英ポスターです。"
+                            },
+                            "keywords": [
+                                  "Poster",
+                                  "Event",
+                                  "Bilingual"
+                            ]
+                      }
+                ]
+          }
+    ];
+
+    const labels = {
+      more: { en: 'More', ko: '더보기', ja: 'もっと見る' },
+      viewWork: { en: 'View Work', ko: '작업물 보기', ja: '作品を見る' },
+      viewImage: { en: 'View Image', ko: '이미지 보기', ja: '画像を見る' }
+    };
+
+    const getText = (value, lang) => value[lang] || value.en;
+
+    function normalizeLang(lang) {
+      return supportedLangs.includes(lang) ? lang : 'en';
+    }
+
+    function getInitialLang() {
+      try {
+        return normalizeLang(localStorage.getItem(LANG_KEY));
+      } catch (error) {
+        return 'en';
+      }
+    }
+
+    function renderWorks(lang) {
+      const root = document.getElementById('works-root');
+      root.innerHTML = sections.map(section => `
+        <section class="work-section" id="${section.id}">
+          <div class="section-heading">
+            <h3 class="section-title">${section.title}</h3>
+            <a class="more-link" href="works-list.html?type=${section.type}" target="_blank" rel="noopener noreferrer">${getText(labels.more, lang)}</a>
+          </div>
+          <p class="section-note">${getText(section.note, lang)}</p>
+          <div class="works-grid">
+            ${section.cards.map(card => `
+              <article class="work-card">
+                <a class="work-image-link" href="${card.link}" target="_blank" rel="noopener noreferrer">
+                  <img src="${card.image}" alt="${getText(card.title, lang)}">
+                </a>
+                <div class="work-copy">
+                  <p class="card-kicker">${card.kicker}</p>
+                  <h4 class="card-title">${getText(card.title, lang)}</h4>
+                  <p class="card-copy">${getText(card.copy, lang)}</p>
+                  <div class="keyword-list">
+                    ${card.keywords.map(keyword => `<span>${keyword}</span>`).join('')}
+                  </div>
+                  <a class="work-link" href="${card.link}" target="_blank" rel="noopener noreferrer">
+                    ${card.link.startsWith('assets/') ? getText(labels.viewImage, lang) : getText(labels.viewWork, lang)}
+                  </a>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+      `).join('');
+    }
+
+    function setLang(lang) {
+      const nextLang = normalizeLang(lang);
+      document.documentElement.lang = nextLang;
+      document.body.style.fontFamily = nextLang === 'ko'
+        ? "var(--font-ko)"
+        : "var(--font-en)";
+
+      document.querySelectorAll('.i18n').forEach(el => {
+        const value = el.getAttribute(`data-${nextLang}`);
+        if (value) el.textContent = value;
+      });
+
+      document.querySelectorAll('.lang-switch a').forEach(link => {
+        link.classList.toggle('active', link.dataset.lang === nextLang);
+      });
+
+      try {
+        localStorage.setItem(LANG_KEY, nextLang);
+      } catch (error) {
+        // Continue without persistence if localStorage is unavailable.
+      }
+
+      renderWorks(nextLang);
+    }
+
+    document.querySelectorAll('.lang-switch a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        setLang(link.dataset.lang);
+      });
+    });
+
+    setLang(getInitialLang());
+  </script>
+</body>
+</html>

@@ -1,254 +1,223 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="SNS 콘텐츠 마케터 문빛나의 포트폴리오. 콘텐츠 기획, 카드뉴스, 숏폼, 브랜드 톤앤매너, 성과 분석 프로젝트를 소개합니다."
-    />
-    <title>문빛나 | SNS 콘텐츠 마케터 포트폴리오</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="문빛나 포트폴리오 홈">
-        <span class="brand-mark">M</span>
-        <span>Moon Bitna</span>
-      </a>
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="#channels">Channels</a>
-        <a href="#work">Work</a>
-        <a href="#strategy">Strategy</a>
-        <a href="#contact">Contact</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOON BITNA | SNS CONTENT MARKETER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <a href="#slide-1">MOON BITNA</a>
+    </div>
+    <div class="header-right">
+      <div class="lang-switch">
+        <a href="#" class="active" onclick="setLang('en'); return false;">EN</a>
+        <a href="#" onclick="setLang('ko'); return false;">KO</a>
+        <a href="#" onclick="setLang('ja'); return false;">JA</a>
+      </div>
+      <nav class="nav-links">
+        <a href="#slide-1" class="i18n" data-en="PROFILE" data-ko="프로필" data-ja="プロフィール">PROFILE</a>
+        <a href="#slide-2" class="i18n" data-en="PROJECTS" data-ko="프로젝트" data-ja="プロジェクト">PROJECTS</a>
+        <a href="#slide-3" class="i18n" data-en="WORKS" data-ko="작업물" data-ja="ワークス">WORKS</a>
+        <a href="#slide-4" class="i18n" data-en="STRATEGY" data-ko="전략" data-ja="戦略">STRATEGY</a>
+        <a href="#slide-5" class="i18n" data-en="CONTACT" data-ko="연락처" data-ja="連絡先">CONTACT</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">SNS Content Marketer Portfolio</p>
-          <h1 id="hero-title">문빛나</h1>
-          <p class="hero-subtitle">관심을 읽고, 반응을 설계하는 콘텐츠 마케터</p>
-          <p class="hero-description">
-            네이버 블로그, 인스타그램, 유튜브 숏폼 등 다양한 플랫폼에서 실제 경험을
-            콘텐츠로 바꾸고 브랜드와 사람 사이의 연결을 만듭니다.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">프로젝트 보기</a>
-            <a class="button secondary" href="#contact">연락하기</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-label="문빛나 포트폴리오 히어로 이미지">
-          <img
-            src="assets/hero-moonlight-workspace.png"
-            alt="달빛이 비치는 콘텐츠 마케팅 작업 공간"
-          />
-        </div>
-      </section>
+  <div class="custom-scroll-indicator">
+    <div class="custom-scroll-thumb"></div>
+  </div>
 
-      <section class="intro section-band" aria-labelledby="intro-title">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="intro-title">브랜드의 말투와 사람들의 반응 사이를 연결합니다.</h2>
-        </div>
-        <div class="intro-grid">
-          <article>
-            <span class="number">01</span>
-            <h3>경험 기반 콘텐츠</h3>
-            <p>맛집, 생활 정보, 일상 소재를 직접 경험한 언어로 풀어내 신뢰감 있는 콘텐츠를 만듭니다.</p>
-          </article>
-          <article>
-            <span class="number">02</span>
-            <h3>플랫폼별 기획</h3>
-            <p>블로그의 정보성, 인스타그램의 시각성, 숏폼의 속도감을 각각 다르게 설계합니다.</p>
-          </article>
-          <article>
-            <span class="number">03</span>
-            <h3>공감과 기억</h3>
-            <p>단순 홍보보다 사람들이 저장하고 다시 떠올릴 수 있는 메시지와 장면을 고민합니다.</p>
-          </article>
-        </div>
-      </section>
+  <main class="scroll-container">
+    
+    <section class="gallery-slide clickable" id="slide-1" style="background-image: url('assets/art_bg_4_1778838385861.png');" onclick="window.location.href='profile.html'">
+      <div class="slide-content">
+        <h2 class="i18n" data-en="PROFILE: MOON BITNA" data-ko="프로필: 문빛나" data-ja="プロフィール: ムン・ビンナ">PROFILE: MOON BITNA</h2>
+        <div class="divider"></div>
+        <p class="dates i18n" data-en="SNS CONTENT MARKETER" data-ko="SNS 콘텐츠 마케터" data-ja="SNSコンテンツマーケター">SNS CONTENT MARKETER</p>
+      </div>
+    </section>
 
-      <section class="channels" id="channels" aria-labelledby="channels-title">
-        <div class="section-heading">
-          <p class="eyebrow">Channels</p>
-          <h2 id="channels-title">운영 채널</h2>
-        </div>
-        <div class="channel-grid">
-          <a class="channel-card" href="https://youtube.com/channel/UCWoeEIxSUqy7-MSb45lcRIA?si=bQdAQ1sCOxC59BZl" target="_blank" rel="noreferrer">
-            <span>YouTube</span>
-            <strong>비주얼 스토리텔링과 숏폼 콘텐츠</strong>
-          </a>
-          <a class="channel-card" href="https://www.instagram.com/real_hoo_ki?igsh=eHY0OG1kbTg0ZnJ3&utm_source=qr" target="_blank" rel="noreferrer">
-            <span>Instagram</span>
-            <strong>다양한 콘텐츠와 소통이 있는 채널</strong>
-          </a>
-          <a class="channel-card" href="https://blog.naver.com/rof0411" target="_blank" rel="noreferrer">
-            <span>Naver Blog</span>
-            <strong>실제 경험을 바탕으로 한 리뷰 콘텐츠</strong>
-          </a>
-          <a class="channel-card" href="https://www.threads.com/@real_hoo_ki?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noreferrer">
-            <span>Threads</span>
-            <strong>일상과 생각을 나누는 소통 채널</strong>
-          </a>
-          <a class="channel-card" href="https://www.tiktok.com/@real_hoo_ki?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer">
-            <span>TikTok Lite</span>
-            <strong>짧고 강렬한 숏폼 콘텐츠</strong>
-          </a>
-          <a class="channel-card" href="https://x.com/real_hoo_ki?s=11" target="_blank" rel="noreferrer">
-            <span>X</span>
-            <strong>빠른 정보와 트렌드를 공유하는 채널</strong>
-          </a>
-        </div>
-      </section>
+    <section class="gallery-slide clickable" id="slide-2" style="background-image: url('assets/art_bg_1_1778838335925.png');" onclick="window.location.href='projects.html'">
+      <div class="slide-content">
+        <h2 class="i18n" data-en="PROJECTS: THE BEGINNING" data-ko="프로젝트: 시작점" data-ja="プロジェクト: 始まり">PROJECTS: THE BEGINNING</h2>
+        <div class="divider"></div>
+        <p class="dates i18n" data-en="2026 PORTFOLIO" data-ko="2026 포트폴리오" data-ja="2026 ポートフォリオ">2026 PORTFOLIO</p>
+        <p class="location i18n" data-en="PLAN. MAKE. REVEAL." data-ko="기획. 제작. 발행." data-ja="企画. 制作. 展開.">PLAN. MAKE. REVEAL.</p>
+      </div>
+    </section>
 
-      <section class="work section-band" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <p class="eyebrow">Selected Work</p>
-          <h2 id="work-title">콘텐츠 마케터로 보여줄 수 있는 작업</h2>
+    <section class="gallery-slide clickable" id="slide-3" style="background-image: url('assets/art_bg_2_1778838351889.png');" onclick="window.location.href='works.html'">
+      <div class="slide-content">
+        <h2 class="i18n" data-en="WORKS: VISUAL MOOD" data-ko="작업물: 시각적 무드" data-ja="ワークス: 視覚的ムード">WORKS: VISUAL MOOD</h2>
+        <div class="divider"></div>
+        <p class="dates i18n" data-en="BRAND EXPERIENCE TRANSLATION" data-ko="브랜드 경험 번역" data-ja="ブランド体験の翻訳">BRAND EXPERIENCE TRANSLATION</p>
+        <p class="location i18n" data-en="INSTAGRAM & BLOG & YOUTUBE" data-ko="인스타그램 & 블로그 & 유튜브" data-ja="インスタグラム & ブログ & YouTube">INSTAGRAM & BLOG & YOUTUBE</p>
+      </div>
+    </section>
+
+    <section class="gallery-slide clickable" id="slide-4" style="background-image: url('assets/art_bg_3_1778838367825.png');" onclick="window.location.href='strategy.html'">
+      <div class="slide-content">
+        <h2 class="i18n" data-en="STRATEGY: CAREER IMPACT MAP" data-ko="전략: 커리어 성과 지도" data-ja="戦略: キャリア成果マップ">STRATEGY: CAREER IMPACT MAP</h2>
+        <div class="divider"></div>
+        <p class="dates i18n" data-en="DATA-DRIVEN OPERATIONS" data-ko="데이터 기반 운영" data-ja="データ基盤の運営">DATA-DRIVEN OPERATIONS</p>
+        <p class="location i18n" data-en="PERFORMANCE & GROWTH" data-ko="성과와 성장" data-ja="成果と成長">PERFORMANCE & GROWTH</p>
+      </div>
+    </section>
+
+    <section class="gallery-slide contact-slide" id="slide-5" style="background-image: url('assets/art_bg_5_1778839047399.png');" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="contact-modal">
+      <div class="slide-content contact-content">
+        <p class="contact-eyebrow i18n" data-en="CONTACT" data-ko="연락처" data-ja="連絡先">CONTACT</p>
+        <h2 class="i18n" data-en="Let's build the next story." data-ko="다음 이야기를 함께 만들어요." data-ja="次の物語を一緒に作りましょう。">Let's build the next story.</h2>
+        <p class="contact-lead i18n" data-en="If you have a content proposal, collaboration question, or portfolio inquiry, send a message and I will reply as soon as I can." data-ko="콘텐츠 제안, 협업 문의, 포트폴리오 관련 질문이 있다면 편하게 남겨주세요. 확인 후 빠르게 답변드리겠습니다." data-ja="コンテンツ提案、協業のご相談、ポートフォリオに関する質問があればお気軽にお送りください。確認後、できるだけ早く返信します。">If you have a content proposal, collaboration question, or portfolio inquiry, send a message and I will reply as soon as I can.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="contact-modal" id="contact-modal" aria-hidden="true">
+    <div class="contact-modal-backdrop" data-close-contact></div>
+    <section class="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button type="button" class="contact-close" data-close-contact aria-label="Close">×</button>
+      <div class="contact-info">
+        <p class="contact-label i18n" id="contact-modal-title" data-en="Values or Communication" data-ko="가치관 혹은 소통" data-ja="価値観とコミュニケーション">Values or Communication</p>
+        <p class="contact-copy i18n" data-en="I am waiting for thoughtful proposals that can share warm stories, clear goals, and useful insights." data-ko="따뜻한 이야기와 영감을 함께 나눌 멋진 제안을 기다립니다." data-ja="温かい物語とインスピレーションを一緒に分かち合える素敵な提案をお待ちしています。">I am waiting for thoughtful proposals that can share warm stories, clear goals, and useful insights.</p>
+        <p class="contact-email-title">Email</p>
+        <a class="contact-email" href="mailto:qlcsk0411@naver.com">qlcsk0411@naver.com</a>
+      </div>
+      <form class="contact-form" action="mailto:qlcsk0411@naver.com" method="post" enctype="text/plain">
+        <div class="contact-fields">
+          <input class="i18n-placeholder" name="name" type="text" data-en="Name" data-ko="이름" data-ja="お名前" placeholder="Name">
+          <input class="i18n-placeholder" name="email" type="email" data-en="Email" data-ko="이메일" data-ja="メール" placeholder="Email">
         </div>
-        <div class="project-grid">
-          <a class="project-card featured" href="https://blog.naver.com/rof0411/224242482229" target="_blank" rel="noreferrer">
-            <div class="project-meta">
-              <span>Naver Blog</span>
-              <span>Review</span>
-            </div>
-            <h3>신뢰도 높은 리뷰 콘텐츠</h3>
-            <p>
-              직접 경험한 정보를 바탕으로 방문 전 궁금한 점을 해결해주는 리뷰형 콘텐츠를
-              구성했습니다. 검색 유입과 체류를 고려해 정보 구조를 정리했습니다.
-            </p>
-            <dl>
-              <div>
-                <dt>역할</dt>
-                <dd>경험 정리, 사진 선택, 정보 구조화, 제목/본문 카피</dd>
-              </div>
-              <div>
-                <dt>포인트</dt>
-                <dd>검색 의도, 신뢰감, 실제 방문 맥락</dd>
-              </div>
-            </dl>
-          </a>
+        <textarea class="i18n-placeholder" name="message" data-en="What would you like to talk about?" data-ko="어떤 이야기를 나누고 싶으신가요?" data-ja="どんなお話をしたいですか？" placeholder="What would you like to talk about?"></textarea>
+        <button type="submit" class="contact-submit i18n" data-en="Send Message" data-ko="메시지 보내기" data-ja="メッセージを送る">Send Message</button>
+      </form>
+    </section>
+  </div>
 
-          <a class="project-card" href="https://www.instagram.com/p/DXsnW4UFAoQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noreferrer">
-            <div class="project-meta">
-              <span>Instagram</span>
-              <span>Feed</span>
-            </div>
-            <h3>시선을 끄는 인스타그램 피드</h3>
-            <p>이미지의 첫인상과 캡션 흐름을 함께 고려해 팔로워가 반응할 수 있는 게시물로 구성했습니다.</p>
-          </a>
+  <script>
+    const supportedLangs = ['en', 'ko', 'ja'];
 
-          <a class="project-card" href="https://youtube.com/shorts/z1hk8MqQsUs?si=_ZKS9kGboOKTjdYg" target="_blank" rel="noreferrer">
-            <div class="project-meta">
-              <span>YouTube</span>
-              <span>Shorts</span>
-            </div>
-            <h3>공감을 얻은 숏폼 콘텐츠</h3>
-            <p>짧은 시간 안에 핵심 장면과 메시지가 전달되도록 영상 흐름과 시청 포인트를 설계했습니다.</p>
-          </a>
+    function normalizeLang(lang) {
+      return supportedLangs.includes(lang) ? lang : 'en';
+    }
 
-          <article class="project-card">
-            <div class="project-meta">
-              <span>Brand Voice</span>
-              <span>Copy</span>
-            </div>
-            <h3>브랜드 톤앤매너 설계</h3>
-            <p>채널별 말투와 표현을 정리해 콘텐츠가 한 사람의 목소리처럼 일관되게 느껴지도록 만듭니다.</p>
-          </article>
-        </div>
-      </section>
+    function getInitialLang() {
+      try {
+        return normalizeLang(localStorage.getItem('moonBitnaLang'));
+      } catch (error) {
+        return 'en';
+      }
+    }
 
-      <section class="strategy" id="strategy" aria-labelledby="strategy-title">
-        <div class="section-heading">
-          <p class="eyebrow">Strategy</p>
-          <h2 id="strategy-title">콘텐츠 하나를 만들 때 보는 네 가지 질문</h2>
-        </div>
-        <ol class="strategy-list">
-          <li>
-            <span>Target</span>
-            <strong>누가 이 콘텐츠를 멈춰 볼까?</strong>
-            <p>연령, 관심사, 상황, 플랫폼 사용 맥락을 먼저 정의합니다.</p>
-          </li>
-          <li>
-            <span>Hook</span>
-            <strong>첫 장면에서 어떤 감정을 건드릴까?</strong>
-            <p>공감, 궁금증, 이득, 문제 해결 중 가장 강한 진입점을 선택합니다.</p>
-          </li>
-          <li>
-            <span>Flow</span>
-            <strong>끝까지 보게 만드는 구조는 무엇일까?</strong>
-            <p>문제 제기, 정보 정리, 사례, 행동 유도 순서로 설득력을 만듭니다.</p>
-          </li>
-          <li>
-            <span>Signal</span>
-            <strong>성과는 어떤 지표로 판단할까?</strong>
-            <p>조회수만이 아니라 저장, 댓글, 공유, 프로필 클릭을 함께 봅니다.</p>
-          </li>
-        </ol>
-      </section>
+    function setLang(lang) {
+      lang = normalizeLang(lang);
 
-      <section class="skills section-band" aria-labelledby="skills-title">
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2 id="skills-title">기획부터 발행 후 개선까지</h2>
-        </div>
-        <div class="skills-layout">
-          <div class="skill-column">
-            <h3>Planning</h3>
-            <ul>
-              <li>콘텐츠 캘린더</li>
-              <li>타깃 분석</li>
-              <li>트렌드 리서치</li>
-              <li>캠페인 메시지 설계</li>
-            </ul>
-          </div>
-          <div class="skill-column">
-            <h3>Production</h3>
-            <ul>
-              <li>카드뉴스 구성</li>
-              <li>숏폼 스크립트</li>
-              <li>캡션 카피라이팅</li>
-              <li>리뷰 콘텐츠 작성</li>
-            </ul>
-          </div>
-          <div class="skill-column">
-            <h3>Tools</h3>
-            <ul>
-              <li>Instagram</li>
-              <li>Naver Blog</li>
-              <li>YouTube Shorts</li>
-              <li>Canva / Figma</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      try {
+        localStorage.setItem('moonBitnaLang', lang);
+      } catch (error) {
+        // Continue without persistence if localStorage is unavailable.
+      }
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">브랜드가 더 잘 말하도록 돕는 콘텐츠를 만들겠습니다.</h2>
-        </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:qlcsk0411@naver.com">qlcsk0411@naver.com</a>
-          <a class="button secondary" href="https://github.com/rofnine/moonlight" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </section>
-    </main>
+      document.documentElement.lang = lang;
 
-    <footer class="footer">
-      <p>© 2026 Moon Bitna. SNS Content Marketer Portfolio.</p>
-      <a href="#top">Back to top</a>
-    </footer>
+      // Update active class on language switcher
+      document.querySelectorAll('.lang-switch a').forEach(el => {
+        el.classList.remove('active');
+        if (el.textContent.toLowerCase() === lang) {
+          el.classList.add('active');
+        }
+      });
 
-    <script src="script.js"></script>
-  </body>
+      // Update text content for all i18n elements
+      document.querySelectorAll('.i18n').forEach(el => {
+        if (el.dataset[lang]) {
+          el.textContent = el.dataset[lang];
+        }
+      });
+
+      document.querySelectorAll('.i18n-placeholder').forEach(el => {
+        if (el.dataset[lang]) {
+          el.placeholder = el.dataset[lang];
+        }
+      });
+      
+      // Change font family based on language for better rendering
+      if (lang === 'ko') {
+        document.body.style.fontFamily = "var(--font-ko), sans-serif";
+      } else {
+        document.body.style.fontFamily = "var(--font-en), sans-serif";
+      }
+    }
+
+    setLang(getInitialLang());
+
+    const contactSlide = document.querySelector('#slide-5');
+    const contactModal = document.querySelector('#contact-modal');
+
+    function openContactModal() {
+      contactModal.classList.add('is-open');
+      contactModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeContactModal() {
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+    }
+
+    contactSlide.addEventListener('click', openContactModal);
+    contactSlide.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openContactModal();
+      }
+    });
+
+    document.querySelectorAll('[data-close-contact]').forEach(el => {
+      el.addEventListener('click', closeContactModal);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeContactModal();
+      }
+    });
+
+    // Scroll animation for slide content
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.slide-content').forEach(slide => {
+      observer.observe(slide);
+    });
+
+    // Custom Minimal Scroll Indicator Logic
+    const scrollContainer = document.querySelector('.scroll-container');
+    const scrollThumb = document.querySelector('.custom-scroll-thumb');
+    
+    scrollContainer.addEventListener('scroll', () => {
+      const scrollableHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      if (scrollableHeight > 0) {
+        const scrollPercentage = scrollContainer.scrollTop / scrollableHeight;
+        // Move the thumb down up to 80px (assuming track is 100px and thumb is 20px)
+        scrollThumb.style.transform = `translateY(${scrollPercentage * 80}px)`;
+      }
+    });
+  </script>
+</body>
 </html>
