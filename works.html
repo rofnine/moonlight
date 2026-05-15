@@ -155,6 +155,12 @@
       background-color: rgba(255, 255, 255, 0.08);
     }
 
+    .work-image-link.is-missing {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03)),
+        rgba(255, 255, 255, 0.08);
+    }
+
     .work-card img {
       width: 100%;
       height: 100%;
@@ -370,7 +376,7 @@
                 },
                 "cards": [
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfMjgx/MDAxNzc4NzIyMzA1NzM3.2OxB9nOZE9Pfha56jn8-z7fAQIbAOKJ07ykwYp9JJVcg._c32RslYIQfq-GWenNnWThAgiEeee78h6733cZmC_ykg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_10_31_20.png?type=s3",
+                            "image": "assets/works/blog-01.png",
                             "link": "https://blog.naver.com/rof0411/224285304314",
                             "kicker": "Restaurant Blog / Naver Post",
                             "title": {
@@ -390,7 +396,7 @@
                             ]
                       },
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNDQg/MDAxNzc4NzMyMTkyMjQ0.waIOJVhZWlbEOSaiLbhmuM98vpp4cNf1UDN1noXYnWwg.A3ySGz2dnF-dcxoxaovln0Ty-kljjUXvt0a3UNye6k0g.JPEG/KakaoTalk_20260514_124027667_06.jpg?type=s3",
+                            "image": "assets/works/blog-02.png",
                             "link": "https://blog.naver.com/rof0411/224285223200",
                             "kicker": "Restaurant Blog / Naver Post",
                             "title": {
@@ -410,7 +416,7 @@
                             ]
                       },
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNzYg/MDAxNzc4NzI5NTU4NTcw.pomGlcr27WcDl2_TSKBfRrw-_V4HnwDY48R6imcwuNwg.-DkzVy0dCoFe2dqwx2yQu1su33eHxEXGtE5f7di-m-Ag.JPEG/KakaoTalk_20260514_115535458_09.jpg?type=s3",
+                            "image": "assets/works/blog-03.jpg",
                             "link": "https://blog.naver.com/rof0411/224285180012",
                             "kicker": "Restaurant Blog / Naver Post",
                             "title": {
@@ -442,7 +448,7 @@
                 },
                 "cards": [
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfNDgg/MDAxNzc4NzE5Mjk1MjQ0.-JeQgZhYJ8L1w0dGUcdv1Znx8sWSnKUGgbzzDmJXpIog.9bjkwg-ywkmGeI5krS7E1R4H0sW_NSBhnBgTIzcNsWIg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_09_41_13.png?type=s3",
+                            "image": "assets/works/blog-04.png",
                             "link": "https://blog.naver.com/rofnine/224284993692",
                             "kicker": "Cleaning Blog / Naver Post",
                             "title": {
@@ -462,7 +468,7 @@
                             ]
                       },
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTRfMTgg/MDAxNzc4NjkxMTUwNDA1.QYgKfD4wi9imBIH34Gpuvis5YwVdgV4W43eIP5ByYF8g.__F9cNFcxMhCfybOy_7DkYm73SA83taNfe2Vfo9ojsAg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_14%C0%CF_%BF%C0%C0%FC_01_52_15.png?type=s3",
+                            "image": "assets/works/posters/dooggeoba-01.png",
                             "link": "https://blog.naver.com/rofnine/224284773479",
                             "kicker": "Cleaning Blog / Naver Post",
                             "title": {
@@ -482,7 +488,7 @@
                             ]
                       },
                       {
-                            "image": "https://blogthumb.pstatic.net/MjAyNjA1MTNfMjI5/MDAxNzc4NjgzNzc4OTkx.Xkg0Lr9wHffdpLfnNQZcDLVb9IcB1zsMCURbgUlI4rYg.XICr_pprYsyqXSh2rnWjmfuyx33nbWuTjfECeFnoYWsg.PNG/ChatGPT_Image_2026%B3%E2_5%BF%F9_13%C0%CF_%BF%C0%C8%C4_11_49_26.png?type=s3",
+                            "image": "assets/works/posters/dooggeoba-02.png",
                             "link": "https://blog.naver.com/rofnine/224284701623",
                             "kicker": "Cleaning Blog / Naver Post",
                             "title": {
@@ -754,7 +760,7 @@
             ${section.cards.map(card => `
               <article class="work-card">
                 <a class="work-image-link" href="${card.link}" target="_blank" rel="noopener noreferrer">
-                  <img src="${card.image}" alt="${getText(card.title, lang)}">
+                  <img src="${card.image}" alt="${getText(card.title, lang)}" onerror="this.parentElement.classList.add('is-missing'); this.remove();">
                 </a>
                 <div class="work-copy">
                   <p class="card-kicker">${card.kicker}</p>
