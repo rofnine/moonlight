@@ -1,4 +1,4 @@
-window.worksCollections = {
+﻿window.worksCollections = {
   "foodBlog": [
     {
       "title": {
@@ -1372,7 +1372,7 @@ window.worksCollections = {
         "ja": "SNSトレンドをひと目で"
       },
       "link": "https://www.instagram.com/p/DXvV5wzEQDz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-01.png",
+      "image": "assets/works/instagram-01.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1396,7 +1396,7 @@ window.worksCollections = {
         "ja": "モデルフィットを作るスタイル差"
       },
       "link": "https://www.instagram.com/p/DYEHNmVERKN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-02.png",
+      "image": "assets/works/instagram-02.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1420,7 +1420,7 @@ window.worksCollections = {
         "ja": "太陽食堂ローカルグルメツアー"
       },
       "link": "https://www.instagram.com/p/DXsnW4UFAoQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-03.png",
+      "image": "assets/works/instagram-03.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1444,7 +1444,7 @@ window.worksCollections = {
         "ja": "ソウルジャズフェスティバルガイド"
       },
       "link": "https://www.instagram.com/p/DXsppHuEkoE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-04.png",
+      "image": "assets/works/instagram-04.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1468,7 +1468,7 @@ window.worksCollections = {
         "ja": "フィギュアコレクションフィード"
       },
       "link": "https://www.instagram.com/p/DXvYFSVETZJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-05.png",
+      "image": "assets/works/instagram-05.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1492,7 +1492,7 @@ window.worksCollections = {
         "ja": "ダルダグリデザートおすすめ"
       },
       "link": "https://www.instagram.com/p/DX-wkFnESv1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-06.png",
+      "image": "assets/works/instagram-06.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1516,7 +1516,7 @@ window.worksCollections = {
         "ja": "青年採用連携プログラム案内"
       },
       "link": "https://www.instagram.com/p/DYEH4z2kZs7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "image": "assets/works/instagram-07.png",
+      "image": "assets/works/instagram-07.jpg",
       "date": {
         "en": "Instagram feed",
         "ko": "인스타그램 피드",
@@ -1914,14 +1914,14 @@ window.worksCollections = {
         "ja": "家族の月ギフトシリーズ"
       },
       "link": "poster-detail.html?id=family",
-      "image": "assets/works/posters/family-01.png",
+      "image": "assets/works/posters/family-01.jpg",
       "images": [
-        "assets/works/posters/family-01.png",
-        "assets/works/posters/family-02.png",
-        "assets/works/posters/family-03.png",
-        "assets/works/posters/family-04.png",
-        "assets/works/posters/family-05.png",
-        "assets/works/posters/family-06.png"
+        "assets/works/posters/family-01.jpg",
+        "assets/works/posters/family-02.jpg",
+        "assets/works/posters/family-03.jpg",
+        "assets/works/posters/family-04.jpg",
+        "assets/works/posters/family-05.jpg",
+        "assets/works/posters/family-06.jpg"
       ],
       "date": {
         "en": "6-poster series",
@@ -1950,7 +1950,7 @@ window.worksCollections = {
       "image": "assets/works/posters/solo-01.jpg",
       "images": [
         "assets/works/posters/solo-01.jpg",
-        "assets/works/posters/solo-02.png"
+        "assets/works/posters/solo-02.jpg"
       ],
       "date": {
         "en": "2-poster set",
@@ -1976,10 +1976,10 @@ window.worksCollections = {
         "ja": "ドゥッコバ入居清掃ポスター"
       },
       "link": "poster-detail.html?id=dooggeoba",
-      "image": "assets/works/posters/dooggeoba-01.png",
+      "image": "assets/works/posters/dooggeoba-01.jpg",
       "images": [
-        "assets/works/posters/dooggeoba-01.png",
-        "assets/works/posters/dooggeoba-02.png"
+        "assets/works/posters/dooggeoba-01.jpg",
+        "assets/works/posters/dooggeoba-02.jpg"
       ],
       "date": {
         "en": "2-poster set",
@@ -2005,10 +2005,10 @@ window.worksCollections = {
         "ja": "ブラックボリ商品ポスター"
       },
       "link": "poster-detail.html?id=blackbori",
-      "image": "assets/works/posters/blackbori-01.png",
+      "image": "assets/works/posters/blackbori-01.jpg",
       "images": [
-        "assets/works/posters/blackbori-01.png",
-        "assets/works/posters/blackbori-02.png"
+        "assets/works/posters/blackbori-01.jpg",
+        "assets/works/posters/blackbori-02.jpg"
       ],
       "date": {
         "en": "2-poster set",
@@ -2037,7 +2037,7 @@ window.worksCollections = {
       "image": "assets/works/posters/newera-01.jpg",
       "images": [
         "assets/works/posters/newera-01.jpg",
-        "assets/works/posters/newera-02.png"
+        "assets/works/posters/newera-02.jpg"
       ],
       "date": {
         "en": "2-poster set",
@@ -2063,9 +2063,9 @@ window.worksCollections = {
         "ja": "クイの証明ブックポスター"
       },
       "link": "poster-detail.html?id=guui",
-      "image": "assets/works/posters/guui-01.png",
+      "image": "assets/works/posters/guui-01.jpg",
       "images": [
-        "assets/works/posters/guui-01.png"
+        "assets/works/posters/guui-01.jpg"
       ],
       "date": {
         "en": "Single poster",

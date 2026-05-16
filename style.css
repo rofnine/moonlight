@@ -1,4 +1,4 @@
-/* Reset & Basic Variables */
+﻿/* Reset & Basic Variables */
 :root {
   --primary-color: #ffffff;
   --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -36,11 +36,19 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   z-index: 100;
-  background-color: transparent; /* Makes header transparent so background shows */
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   color: #fff;
   transition: all 0.3s ease;
   font-size: 14px;
   letter-spacing: 1px;
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Add a text shadow to header links so they are readable over images */
@@ -114,6 +122,7 @@ a {
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
+  background: #fff;
   /* Removed scroll-snap for natural scrolling */
   scroll-behavior: smooth;
   
@@ -149,11 +158,12 @@ a {
 /* Individual Slides */
 .gallery-slide {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 64vh;
+  min-height: 520px;
   /* Fixed background creates the parallax effect where text scrolls up over the image */
-  background-attachment: fixed;
-  background-size: contain;
+  background-attachment: scroll;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #111;
@@ -163,13 +173,22 @@ a {
   text-align: center;
 }
 
+.scroll-container .gallery-slide:not(:last-child) {
+  margin-bottom: 72px;
+}
+
 /* Dark Overlay for better text readability */
 .gallery-slide::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  transition: background 0.26s ease;
+}
+
+.gallery-slide.is-color-active::before {
+  background: rgba(0, 0, 0, 0.24);
 }
 
 /* Slide Content Container */
@@ -230,9 +249,33 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: #fff;
+  }
+
+  .site-header.is-scrolled {
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+
+  .site-header a {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  .lang-switch a {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .lang-switch a:hover,
+  .lang-switch a.active {
+    color: #fff;
+  }
+
+  .nav-links a::after {
+    background-color: #fff;
   }
   
   .header-right {
@@ -250,6 +293,15 @@ a {
   .slide-content h2 {
     letter-spacing: 2px;
   }
+
+  .gallery-slide {
+    height: 72vh;
+    min-height: 520px;
+  }
+
+  .scroll-container .gallery-slide:not(:last-child) {
+    margin-bottom: 54px;
+  }
 }
 
 /* Clickable Slide */
@@ -263,7 +315,11 @@ a {
 }
 
 .contact-slide::before {
-  background: rgba(0, 0, 0, 0.28);
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.contact-slide.is-color-active::before {
+  background: rgba(0, 0, 0, 0.22);
 }
 
 .contact-content {
