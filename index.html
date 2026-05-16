@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 
   <header class="site-header">
     <div class="logo">
@@ -36,6 +37,7 @@
   </div>
 
   <main class="scroll-container">
+
     
     <section class="gallery-slide clickable" id="slide-1" style="background-image: url('assets/art_bg_4_1778838385861.jpg');" data-target="profile.html">
       <div class="slide-content">
@@ -235,23 +237,64 @@
 
     // Custom Minimal Scroll Indicator Logic
     const scrollContainer = document.querySelector('.scroll-container');
+    const scrollIndicator = document.querySelector('.custom-scroll-indicator');
     const scrollThumb = document.querySelector('.custom-scroll-thumb');
     const siteHeader = document.querySelector('.site-header');
+    const thumbTravel = 80;
+    let isDraggingScrollThumb = false;
 
     function updateHeaderBackground() {
       siteHeader.classList.toggle('is-scrolled', scrollContainer.scrollTop > 24);
     }
-    
-    scrollContainer.addEventListener('scroll', () => {
+
+    function updateCustomScrollThumb() {
       const scrollableHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
       if (scrollableHeight > 0) {
         const scrollPercentage = scrollContainer.scrollTop / scrollableHeight;
-        // Move the thumb down up to 80px (assuming track is 100px and thumb is 20px)
-        scrollThumb.style.transform = `translateY(${scrollPercentage * 80}px)`;
+        scrollThumb.style.transform = `translateY(${scrollPercentage * thumbTravel}px)`;
       }
+    }
+
+    function moveScrollToPointer(clientY) {
+      const trackRect = scrollIndicator.getBoundingClientRect();
+      const thumbHeight = scrollThumb.offsetHeight;
+      const usableTrack = Math.max(trackRect.height - thumbHeight, 1);
+      const y = Math.min(Math.max(clientY - trackRect.top - thumbHeight / 2, 0), usableTrack);
+      const scrollableHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      scrollContainer.scrollTop = scrollableHeight * (y / usableTrack);
+    }
+
+    scrollIndicator.addEventListener('pointerdown', event => {
+      event.preventDefault();
+      isDraggingScrollThumb = true;
+      scrollThumb.classList.add('is-dragging');
+      scrollIndicator.setPointerCapture(event.pointerId);
+      moveScrollToPointer(event.clientY);
+    });
+
+    scrollIndicator.addEventListener('pointermove', event => {
+      if (!isDraggingScrollThumb) return;
+      moveScrollToPointer(event.clientY);
+    });
+
+    function stopScrollThumbDrag(event) {
+      if (!isDraggingScrollThumb) return;
+      isDraggingScrollThumb = false;
+      scrollThumb.classList.remove('is-dragging');
+      if (scrollIndicator.hasPointerCapture(event.pointerId)) {
+        scrollIndicator.releasePointerCapture(event.pointerId);
+      }
+    }
+
+    scrollIndicator.addEventListener('pointerup', stopScrollThumbDrag);
+    scrollIndicator.addEventListener('pointercancel', stopScrollThumbDrag);
+
+    scrollContainer.addEventListener('scroll', () => {
+      updateCustomScrollThumb();
       updateHeaderBackground();
     });
 
+    updateCustomScrollThumb();
     updateHeaderBackground();
   </script>
 </body>

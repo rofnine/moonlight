@@ -1,4 +1,4 @@
-﻿/* Reset & Basic Variables */
+/* Reset & Basic Variables */
 :root {
   --primary-color: #ffffff;
   --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -36,24 +36,24 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   z-index: 100;
-  background-color: transparent;
+  background-color: #fff;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  color: #fff;
-  transition: all 0.3s ease;
+  color: #20242a;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
   font-size: 14px;
   letter-spacing: 1px;
 }
 
 .site-header.is-scrolled {
-  background-color: rgba(0, 0, 0, 0.24);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Add a text shadow to header links so they are readable over images */
 .site-header a {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: none;
 }
 
 .logo a {
@@ -77,17 +77,17 @@ a {
 }
 
 .lang-switch a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(32, 36, 42, 0.52);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .lang-switch a:hover {
-  color: #fff;
+  color: #20242a;
 }
 
 .lang-switch a.active {
-  color: #fff;
+  color: #20242a;
   font-weight: 700;
 }
 
@@ -109,7 +109,7 @@ a {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #20242a;
   transition: width 0.3s ease;
 }
 
@@ -123,6 +123,8 @@ a {
   width: 100%;
   overflow-y: scroll;
   background: #fff;
+  padding-top: 112px;
+  padding-bottom: 72px;
   /* Removed scroll-snap for natural scrolling */
   scroll-behavior: smooth;
   
@@ -141,18 +143,37 @@ a {
   right: 40px;
   top: 50%;
   transform: translateY(-50%);
-  width: 2px;
+  width: 18px;
   height: 100px;
-  background-color: rgba(255, 255, 255, 0.2);
   z-index: 99;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.custom-scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .custom-scroll-thumb {
+  position: relative;
+  left: 8px;
   width: 2px;
   height: 20px;
   background-color: #fff;
   border-radius: 2px;
+  cursor: grab;
+  touch-action: none;
   /* transform is updated via JS */
+}
+
+.custom-scroll-thumb.is-dragging {
+  cursor: grabbing;
 }
 
 /* Individual Slides */
@@ -249,33 +270,38 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    background-color: transparent;
+    background-color: #fff;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    color: #fff;
+    color: #20242a;
   }
 
   .site-header.is-scrolled {
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .site-header a {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: none;
   }
 
   .lang-switch a {
-    color: rgba(255, 255, 255, 0.62);
+    color: rgba(32, 36, 42, 0.56);
   }
 
   .lang-switch a:hover,
   .lang-switch a.active {
-    color: #fff;
+    color: #20242a;
   }
 
   .nav-links a::after {
-    background-color: #fff;
+    background-color: #20242a;
+  }
+
+  .scroll-container {
+    padding-top: 148px;
+    padding-bottom: 54px;
   }
   
   .header-right {

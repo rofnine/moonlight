@@ -734,6 +734,7 @@
     };
 
     const getText = (value, lang) => value[lang] || value.en;
+    const sectionsWithMore = new Set(['instagram', 'poster']);
 
     function normalizeLang(lang) {
       return supportedLangs.includes(lang) ? lang : 'en';
@@ -753,7 +754,7 @@
         <section class="work-section" id="${section.id}">
           <div class="section-heading">
             <h3 class="section-title">${section.title}</h3>
-            <a class="more-link" href="works-list.html?type=${section.type}" target="_blank" rel="noopener noreferrer">${getText(labels.more, lang)}</a>
+            ${sectionsWithMore.has(section.type) ? `<a class="more-link" href="works-list.html?type=${section.type}" target="_blank" rel="noopener noreferrer">${getText(labels.more, lang)}</a>` : ''}
           </div>
           <p class="section-note">${getText(section.note, lang)}</p>
           <div class="works-grid">
