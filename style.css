@@ -328,6 +328,10 @@ a {
   .scroll-container .gallery-slide:not(:last-child) {
     margin-bottom: 54px;
   }
+
+  .custom-scroll-indicator {
+    display: none;
+  }
 }
 
 /* Clickable Slide */
