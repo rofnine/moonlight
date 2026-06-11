@@ -104,6 +104,34 @@
       font-size: 12px;
     }
 
+    .detail-impact {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .detail-impact > div {
+      padding: 15px;
+      background: rgba(12, 13, 14, 0.76);
+    }
+
+    .detail-impact strong {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 9px;
+      letter-spacing: 1.4px;
+    }
+
+    .detail-impact span {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
     .poster-gallery {
       display: grid;
       gap: 24px;
@@ -173,6 +201,10 @@
       .poster-frame {
         padding: 8px;
       }
+
+      .detail-impact {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -204,6 +236,7 @@
         <h1 class="detail-title" id="detail-title">Poster Detail</h1>
         <p class="detail-summary" id="detail-summary"></p>
         <div class="poster-meta" id="poster-meta"></div>
+        <div class="detail-impact" id="detail-impact"></div>
       </div>
       <a class="back-link i18n" href="works-list.html?type=poster" data-en="Back to Poster List" data-ko="포스터 목록으로" data-ja="ポスター一覧へ">Back to Poster List</a>
     </section>
@@ -217,7 +250,12 @@
     const supportedLangs = ['en', 'ko', 'ja'];
     const labels = {
       item: { en: 'Poster', ko: '포스터', ja: 'ポスター' },
-      notFound: { en: 'Poster work not found.', ko: '포스터 작업물을 찾을 수 없습니다.', ja: 'ポスター作品が見つかりません。' }
+      notFound: { en: 'Poster work not found.', ko: '포스터 작업물을 찾을 수 없습니다.', ja: 'ポスター作品が見つかりません。' },
+      role: { en: 'MY ROLE', ko: '담당 역할', ja: '担当' },
+      goal: { en: 'GOAL', ko: '목표', ja: '目標' },
+      output: { en: 'OUTPUT', ko: '결과물', ja: '成果物' },
+      roleValue: { en: 'Concept · copy · visual design', ko: '콘셉트 · 카피 · 비주얼 디자인', ja: 'コンセプト・コピー・ビジュアルデザイン' },
+      goalValue: { en: 'Communicate the core message at a glance', ko: '핵심 메시지를 한눈에 전달', ja: '中心メッセージを一目で伝達' }
     };
 
     function normalizeLang(lang) {
@@ -277,6 +315,12 @@
       document.getElementById('detail-title').textContent = title;
       document.getElementById('detail-summary').textContent = getText(item.summary, lang);
       document.getElementById('poster-meta').innerHTML = (item.tags || []).map(tag => `<span>${escapeHtml(tag)}</span>`).join('');
+      const imageCount = (item.images || [item.image]).length;
+      document.getElementById('detail-impact').innerHTML = `
+        <div><strong>${getText(labels.role, lang)}</strong><span>${getText(labels.roleValue, lang)}</span></div>
+        <div><strong>${getText(labels.goal, lang)}</strong><span>${getText(labels.goalValue, lang)}</span></div>
+        <div><strong>${getText(labels.output, lang)}</strong><span>${imageCount} ${getText(labels.item, lang)}</span></div>
+      `;
       document.getElementById('poster-gallery').innerHTML = (item.images || [item.image]).map((src, index) => `
         <article class="poster-frame">
           <p class="poster-count">${getText(labels.item, lang)} ${index + 1} / ${(item.images || [item.image]).length}</p>

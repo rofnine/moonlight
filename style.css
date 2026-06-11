@@ -5,6 +5,7 @@
   --header-bg: rgba(255, 255, 255, 0.95);
   --font-en: 'Inter', sans-serif;
   --font-ko: 'Noto Sans KR', sans-serif;
+  --site-header-height: 112px;
 }
 
 * {
@@ -181,6 +182,7 @@ a {
   position: relative;
   isolation: isolate;
   width: 100%;
+  min-height: var(--site-header-height);
   height: 64vh;
   min-height: 520px;
   background-attachment: scroll;
@@ -196,6 +198,11 @@ a {
   --parallax-y: 0px;
   --content-y: 0px;
   --parallax-scale: 1.2;
+}
+
+.site-header > .logo,
+.site-header > .header-right {
+  flex-shrink: 0;
 }
 
 .scroll-container .gallery-slide:not(:last-child) {
@@ -329,7 +336,12 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
+  :root {
+    --site-header-height: 148px;
+  }
+
   .site-header {
+    min-height: var(--site-header-height);
     padding: 15px 20px;
     flex-direction: column;
     align-items: center;
@@ -379,9 +391,15 @@ a {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 10px;
-    font-size: 10px;
+    max-width: 100% !important;
+    gap: 8px 7px !important;
+    font-size: 9.5px !important;
     letter-spacing: 0.5px;
+  }
+
+  .nav-links a {
+    min-width: 0;
+    white-space: nowrap;
   }
   
   .slide-content h2 {

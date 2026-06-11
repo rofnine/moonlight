@@ -202,6 +202,37 @@
       word-break: keep-all;
     }
 
+    .work-impact {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .impact-item {
+      min-width: 0;
+      padding: 12px;
+      background: rgba(12, 13, 14, 0.72);
+    }
+
+    .impact-label {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .impact-value {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
     .keyword-list {
       display: flex;
       flex-wrap: wrap;
@@ -276,14 +307,19 @@
       }
 
       .works-name {
-        font-size: 30px;
+        width: min(100%, 320px);
+        max-width: 320px;
+        font-size: 27px;
+        line-height: 1.18;
         letter-spacing: 1px;
+        white-space: normal;
         overflow-wrap: anywhere;
       }
 
       .works-role,
       .section-note,
       .card-copy {
+        max-width: 330px;
         letter-spacing: 0;
         word-break: normal;
         overflow-wrap: anywhere;
@@ -734,6 +770,19 @@
       viewImage: { en: 'View Image', ko: '이미지 보기', ja: '画像を見る' }
     };
 
+    const workBriefs = {
+      foodBlog: { role: { en: 'Planning · writing · SEO', ko: '기획 · 글 작성 · SEO', ja: '企画・執筆・SEO' }, result: { en: 'Search-led review content', ko: '검색형 리뷰 콘텐츠', ja: '検索型レビューコンテンツ' } },
+      cleaningBlog: { role: { en: 'Planning · copy · keywords', ko: '기획 · 카피 · 키워드', ja: '企画・コピー・キーワード' }, result: { en: 'Local-service information archive', ko: '지역 서비스 정보 아카이브', ja: '地域サービス情報アーカイブ' } },
+      instagram: { role: { en: 'Concept · visual · caption', ko: '콘셉트 · 비주얼 · 캡션', ja: 'コンセプト・ビジュアル・文章' }, result: { en: '8 selected feed works', ko: '대표 피드 8개 선별', ja: '代表フィード8点' } },
+      youtube: { role: { en: 'Planning · shooting · editing', ko: '기획 · 촬영 · 편집', ja: '企画・撮影・編集' }, result: { en: '10K+ accumulated views', ko: '누적 조회수 1만+', ja: '累計再生1万回+' } },
+      poster: { role: { en: 'Concept · copy · visual design', ko: '콘셉트 · 카피 · 비주얼 디자인', ja: 'コンセプト・コピー・ビジュアル' }, result: { en: 'Multi-format design exploration', ko: '다양한 형식의 디자인 실험', ja: '複数形式のデザイン展開' } }
+    };
+
+    const impactLabels = {
+      role: { en: 'MY ROLE', ko: '담당 역할', ja: '担当' },
+      result: { en: 'OUTPUT', ko: '결과', ja: '成果物' }
+    };
+
     const getText = (value, lang) => value[lang] || value.en;
     const sectionsWithMore = new Set(['instagram', 'poster']);
 
@@ -768,6 +817,10 @@
                   <p class="card-kicker">${card.kicker}</p>
                   <h4 class="card-title">${getText(card.title, lang)}</h4>
                   <p class="card-copy">${getText(card.copy, lang)}</p>
+                  <div class="work-impact">
+                    <div class="impact-item"><span class="impact-label">${getText(impactLabels.role, lang)}</span><span class="impact-value">${getText(workBriefs[section.type].role, lang)}</span></div>
+                    <div class="impact-item"><span class="impact-label">${getText(impactLabels.result, lang)}</span><span class="impact-value">${getText(workBriefs[section.type].result, lang)}</span></div>
+                  </div>
                   <div class="keyword-list">
                     ${card.keywords.map(keyword => `<span>${keyword}</span>`).join('')}
                   </div>

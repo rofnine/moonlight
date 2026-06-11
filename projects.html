@@ -184,6 +184,36 @@
       line-height: 1;
     }
 
+    .case-summary {
+      display: grid;
+      gap: 10px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .case-row {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .case-label {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .case-value {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+
     @media (max-width: 768px) {
       .content-wrapper {
         padding: 180px 22px 72px;
@@ -351,6 +381,43 @@
         document.body.style.fontFamily = "var(--font-en), sans-serif";
       }
     }
+
+    const projectCases = [
+      {
+        role: { en: 'Planning · photography · writing · SEO keywords', ko: '기획 · 촬영 · 글 작성 · SEO 키워드 설계', ja: '企画・撮影・執筆・SEOキーワード設計' },
+        action: { en: 'Turned visit details into search-led recommendation content.', ko: '방문 정보를 검색형 추천 콘텐츠로 구조화했습니다.', ja: '訪問情報を検索型の推薦コンテンツに構成しました。' },
+        result: { en: 'Achieved four-digit traffic from a single post.', ko: '단일 포스팅 네 자릿수 유입을 달성했습니다.', ja: '1記事で4桁の流入を達成しました。' }
+      },
+      {
+        role: { en: 'Content planning · copywriting · keyword research', ko: '콘텐츠 기획 · 카피 작성 · 키워드 조사', ja: 'コンテンツ企画・コピー作成・キーワード調査' },
+        action: { en: 'Organized service expertise around real customer searches.', ko: '실제 고객 검색 질문을 중심으로 서비스 정보를 정리했습니다.', ja: '実際の顧客検索を中心にサービス情報を整理しました。' },
+        result: { en: 'Built a reusable local-service content archive.', ko: '지역 서비스용 콘텐츠 아카이브를 구축했습니다.', ja: '地域サービス向けコンテンツアーカイブを構築しました。' }
+      },
+      {
+        role: { en: 'Concept · visual direction · caption writing', ko: '콘셉트 · 비주얼 디렉션 · 캡션 작성', ja: 'コンセプト・ビジュアル設計・文章作成' },
+        action: { en: 'Translated everyday moments into a consistent visual feed.', ko: '일상의 순간을 일관된 비주얼 피드로 구성했습니다.', ja: '日常の瞬間を一貫したビジュアルフィードにしました。' },
+        result: { en: 'Curated 8 representative feed works.', ko: '대표 피드 작업물 8개를 선별했습니다.', ja: '代表フィード作品8点を選定しました。' }
+      },
+      {
+        role: { en: 'Planning · shooting · editing · publishing', ko: '기획 · 촬영 · 편집 · 업로드', ja: '企画・撮影・編集・公開' },
+        action: { en: 'Designed short-form hooks around daily and psychology themes.', ko: '일상과 심리 주제로 쇼츠의 도입 훅을 설계했습니다.', ja: '日常と心理テーマでShortsの導入フックを設計しました。' },
+        result: { en: 'Recorded 10K+ accumulated Shorts views.', ko: '쇼츠 누적 조회수 1만 회 이상을 기록했습니다.', ja: 'Shorts累計1万回以上の再生を記録しました。' }
+      }
+    ];
+
+    document.querySelectorAll('.project-card').forEach((card, index) => {
+      const item = projectCases[index];
+      if (!item) return;
+      const summary = document.createElement('div');
+      summary.className = 'case-summary';
+      summary.innerHTML = ['role', 'action', 'result'].map(key => `
+        <div class="case-row">
+          <span class="case-label">${key.toUpperCase()}</span>
+          <span class="case-value i18n" data-en="${item[key].en}" data-ko="${item[key].ko}" data-ja="${item[key].ja}">${item[key].en}</span>
+        </div>
+      `).join('');
+      card.querySelector('.keyword-list').before(summary);
+    });
 
     setLang(getInitialLang());
 

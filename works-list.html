@@ -150,6 +150,35 @@
       margin-bottom: 18px;
     }
 
+    .feed-impact {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .feed-impact > div {
+      min-width: 0;
+      padding: 11px;
+      background: rgba(12, 13, 14, 0.72);
+    }
+
+    .feed-impact strong {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 9px;
+      letter-spacing: 1.3px;
+    }
+
+    .feed-impact span {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
     .tag-list {
       display: flex;
       flex-wrap: wrap;
@@ -293,6 +322,19 @@
       open: { en: 'Open Work', ko: '작업물 열기', ja: '作品を開く' }
     };
 
+    const portfolioBriefs = {
+      foodBlog: { role: { en: 'Planning · writing · SEO', ko: '기획 · 글 작성 · SEO', ja: '企画・執筆・SEO' }, output: { en: 'Search review', ko: '검색형 리뷰', ja: '検索レビュー' } },
+      cleaningBlog: { role: { en: 'Planning · copy · keywords', ko: '기획 · 카피 · 키워드', ja: '企画・コピー・キーワード' }, output: { en: 'Service content', ko: '서비스 콘텐츠', ja: 'サービスコンテンツ' } },
+      instagram: { role: { en: 'Concept · visual · caption', ko: '콘셉트 · 비주얼 · 캡션', ja: 'コンセプト・ビジュアル・文章' }, output: { en: 'Feed creative', ko: '피드 크리에이티브', ja: 'フィードクリエイティブ' } },
+      youtube: { role: { en: 'Planning · shooting · editing', ko: '기획 · 촬영 · 편집', ja: '企画・撮影・編集' }, output: { en: 'Short-form video', ko: '숏폼 영상', ja: 'ショート動画' } },
+      poster: { role: { en: 'Concept · copy · design', ko: '콘셉트 · 카피 · 디자인', ja: 'コンセプト・コピー・デザイン' }, output: { en: 'Poster system', ko: '포스터 시스템', ja: 'ポスターシステム' } }
+    };
+
+    const briefLabels = {
+      role: { en: 'MY ROLE', ko: '담당 역할', ja: '担当' },
+      output: { en: 'OUTPUT', ko: '결과물', ja: '成果物' }
+    };
+
     function normalizeLang(lang) {
       return supportedLangs.includes(lang) ? lang : 'en';
     }
@@ -377,6 +419,7 @@
         const image = getDisplayImage(type, item, index);
         const isExternal = /^https?:\/\//.test(item.link);
         const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+        const brief = portfolioBriefs[type];
         return `
         <article class="feed-card reveal-up">
           <a class="feed-image" href="${item.link}"${target}>
@@ -386,6 +429,10 @@
             <p class="feed-date">${escapeHtml(date)}</p>
             <h2 class="feed-title">${escapeHtml(title)}</h2>
             <p class="feed-summary">${escapeHtml(summary)}</p>
+            <div class="feed-impact">
+              <div><strong>${getText(briefLabels.role, lang)}</strong><span>${getText(brief.role, lang)}</span></div>
+              <div><strong>${getText(briefLabels.output, lang)}</strong><span>${getText(brief.output, lang)}</span></div>
+            </div>
             <div class="tag-list">${(item.tags || []).map(tag => `<span>${escapeHtml(tag)}</span>`).join('')}</div>
             <a class="feed-link" href="${item.link}"${target}>${getText(labels.open, lang)}</a>
           </div>
