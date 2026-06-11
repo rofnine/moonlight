@@ -14,7 +14,7 @@
 
   <header class="site-header">
     <div class="logo">
-      <a href="#slide-1">MOON BITNA</a>
+      <a href="index.html">MOON BITNA</a>
     </div>
     <div class="header-right">
       <div class="lang-switch">
@@ -240,8 +240,11 @@
     const scrollIndicator = document.querySelector('.custom-scroll-indicator');
     const scrollThumb = document.querySelector('.custom-scroll-thumb');
     const siteHeader = document.querySelector('.site-header');
+    const parallaxSlides = Array.from(document.querySelectorAll('.gallery-slide'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const thumbTravel = 80;
     let isDraggingScrollThumb = false;
+    let parallaxFrame = null;
 
     function updateHeaderBackground() {
       siteHeader.classList.toggle('is-scrolled', scrollContainer.scrollTop > 24);
@@ -253,6 +256,39 @@
         const scrollPercentage = scrollContainer.scrollTop / scrollableHeight;
         scrollThumb.style.transform = `translateY(${scrollPercentage * thumbTravel}px)`;
       }
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateParallaxSlides() {
+      parallaxFrame = null;
+
+      if (reduceMotion.matches) {
+        return;
+      }
+
+      const viewportCenter = window.innerHeight / 2;
+
+      parallaxSlides.forEach(slide => {
+        const rect = slide.getBoundingClientRect();
+        const slideCenter = rect.top + rect.height / 2;
+        const distance = slideCenter - viewportCenter;
+        const imageOffset = clamp(distance * -0.28, -170, 170);
+        const contentOffset = clamp(distance * 0.085, -52, 52);
+
+        slide.style.setProperty('--parallax-y', `${imageOffset.toFixed(2)}px`);
+        slide.style.setProperty('--content-y', `${contentOffset.toFixed(2)}px`);
+      });
+    }
+
+    function requestParallaxUpdate() {
+      if (parallaxFrame !== null) {
+        return;
+      }
+
+      parallaxFrame = requestAnimationFrame(updateParallaxSlides);
     }
 
     function moveScrollToPointer(clientY) {
@@ -292,10 +328,15 @@
     scrollContainer.addEventListener('scroll', () => {
       updateCustomScrollThumb();
       updateHeaderBackground();
+      requestParallaxUpdate();
     });
+
+    window.addEventListener('resize', requestParallaxUpdate);
+    reduceMotion.addEventListener('change', requestParallaxUpdate);
 
     updateCustomScrollThumb();
     updateHeaderBackground();
+    updateParallaxSlides();
   </script>
 </body>
 </html>

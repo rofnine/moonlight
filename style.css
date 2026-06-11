@@ -179,6 +179,7 @@ a {
 /* Individual Slides */
 .gallery-slide {
   position: relative;
+  isolation: isolate;
   width: 100%;
   height: 64vh;
   min-height: 520px;
@@ -191,50 +192,74 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
+  --parallax-y: 0px;
+  --content-y: 0px;
+  --parallax-scale: 1.2;
 }
 
 .scroll-container .gallery-slide:not(:last-child) {
   margin-bottom: 72px;
 }
 
+.gallery-slide::after {
+  content: '';
+  position: absolute;
+  inset: -18vh -8vw;
+  z-index: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate3d(0, var(--parallax-y), 0) scale(var(--parallax-scale));
+  transform-origin: center;
+  filter: saturate(1.08) contrast(1.04);
+  transition: transform 0.06s linear;
+  will-change: transform;
+  pointer-events: none;
+}
+
 .gallery-slide::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.56);
   z-index: 1;
   transition: background 0.26s ease;
 }
 
 .gallery-slide.is-color-active::before {
-  background: rgba(0, 0, 0, 0.24);
+  background: rgba(0, 0, 0, 0.28);
 }
 
 /* Slide Content Container */
 .slide-content {
   position: relative;
   z-index: 2;
+  width: min(100%, 1200px);
   padding: 0 20px;
   max-width: 1200px;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 /* Applied via JS IntersectionObserver */
 .slide-content.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, var(--content-y), 0);
 }
 
 .slide-content h2 {
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 700;
   letter-spacing: 4px;
-  text-shadow: var(--text-shadow);
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.62);
   margin-bottom: 20px;
   line-height: 1.2;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .divider {
@@ -249,7 +274,8 @@ a {
   font-size: 16px;
   letter-spacing: 3px;
   margin-bottom: 10px;
-  text-shadow: var(--text-shadow);
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.58);
   text-transform: uppercase;
 }
 
@@ -257,8 +283,48 @@ a {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
-  text-shadow: var(--text-shadow);
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.58);
   text-transform: uppercase;
+}
+
+/* Shared Reveal Motion */
+.reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  filter: blur(7px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.reveal-stagger > .reveal-up:nth-child(2) {
+  --reveal-delay: 80ms;
+}
+
+.reveal-stagger > .reveal-up:nth-child(3) {
+  --reveal-delay: 160ms;
+}
+
+.reveal-stagger > .reveal-up:nth-child(4) {
+  --reveal-delay: 240ms;
+}
+
+.reveal-stagger > .reveal-up:nth-child(5) {
+  --reveal-delay: 320ms;
+}
+
+.reveal-stagger > .reveal-up:nth-child(n + 6) {
+  --reveal-delay: 400ms;
 }
 
 /* Responsive */
@@ -272,6 +338,7 @@ a {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     color: #20242a;
+    font-size: 12px;
   }
 
   .site-header.is-scrolled {
@@ -303,24 +370,29 @@ a {
   }
   
   .header-right {
+    width: 100%;
     align-items: center;
     gap: 10px;
   }
   
   .nav-links {
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    font-size: 12px;
+    gap: 8px 10px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
   
   .slide-content h2 {
-    letter-spacing: 2px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
   }
 
   .gallery-slide {
     height: 72vh;
     min-height: 520px;
+    --parallax-scale: 1.16;
   }
 
   .scroll-container .gallery-slide:not(:last-child) {
@@ -329,6 +401,22 @@ a {
 
   .custom-scroll-indicator {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-slide::after,
+  .slide-content,
+  .reveal-up {
+    transition: none;
+    transform: none;
+    filter: none;
+  }
+
+  .slide-content.visible,
+  .reveal-up {
+    opacity: 1;
+    transform: none;
   }
 }
 

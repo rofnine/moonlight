@@ -248,7 +248,7 @@
   </header>
 
   <main class="list-wrapper">
-    <section class="list-header">
+    <section class="list-header reveal-up">
       <div>
         <p class="eyebrow" id="list-eyebrow">WORKS FEED</p>
         <h1 class="list-title" id="list-title">Works Feed</h1>
@@ -257,9 +257,10 @@
       <a class="back-link i18n" href="works.html" data-en="Back to Works" data-ko="작업물로 돌아가기" data-ja="ワークスへ戻る">Back to Works</a>
     </section>
 
-    <section class="feed-grid" id="feed-grid"></section>
+    <section class="feed-grid reveal-stagger" id="feed-grid"></section>
   </main>
 
+  <script src="script.js"></script>
   <script src="works-list-data.js"></script>
   <script>
     const LANG_KEY = 'moonBitnaLang';
@@ -377,7 +378,7 @@
         const isExternal = /^https?:\/\//.test(item.link);
         const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
         return `
-        <article class="feed-card">
+        <article class="feed-card reveal-up">
           <a class="feed-image" href="${item.link}"${target}>
             ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" onerror="this.parentElement.classList.add('is-missing'); this.remove();">` : ''}
           </a>
@@ -391,6 +392,9 @@
         </article>
       `;
       }).join('');
+      if (window.refreshRevealUp) {
+        window.refreshRevealUp(document.getElementById('feed-grid'));
+      }
     }
 
     function setLang(lang) {

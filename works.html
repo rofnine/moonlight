@@ -351,7 +351,7 @@
   </header>
 
   <main class="content-wrapper">
-    <section class="works-header">
+    <section class="works-header reveal-up">
       <h1 class="page-title i18n" data-en="WORKS" data-ko="작업물" data-ja="ワークス">WORKS</h1>
       <h2 class="works-name i18n" data-en="VISUAL CONTENT ARCHIVE" data-ko="비주얼 콘텐츠 아카이브" data-ja="ビジュアルコンテンツアーカイブ">VISUAL CONTENT ARCHIVE</h2>
       <p class="works-role i18n" data-en="Selected works across blog, Instagram, YouTube Shorts, and personal poster experiments. Each card summarizes what the post contains and links to the original work." data-ko="블로그, 인스타그램, 유튜브 쇼츠, 개인 포스터 작업물을 선별해 정리했습니다. 각 카드는 게시글의 주요 내용과 원본 링크를 중심으로 보여줍니다." data-ja="ブログ、Instagram、YouTube Shorts、個人ポスター作品を選んで整理しました。各カードは投稿の主な内容と元リンクを中心に表示します。">Selected works across blog, Instagram, YouTube Shorts, and personal poster experiments. Each card summarizes what the post contains and links to the original work.</p>
@@ -360,6 +360,7 @@
     <div id="works-root"></div>
   </main>
 
+  <script src="script.js"></script>
   <script>
     const LANG_KEY = 'moonBitnaLang';
     const supportedLangs = ['en', 'ko', 'ja'];
@@ -751,15 +752,15 @@
     function renderWorks(lang) {
       const root = document.getElementById('works-root');
       root.innerHTML = sections.map(section => `
-        <section class="work-section" id="${section.id}">
+        <section class="work-section reveal-up" id="${section.id}">
           <div class="section-heading">
             <h3 class="section-title">${section.title}</h3>
             ${sectionsWithMore.has(section.type) ? `<a class="more-link" href="works-list.html?type=${section.type}" target="_blank" rel="noopener noreferrer">${getText(labels.more, lang)}</a>` : ''}
           </div>
           <p class="section-note">${getText(section.note, lang)}</p>
-          <div class="works-grid">
+          <div class="works-grid reveal-stagger">
             ${section.cards.map(card => `
-              <article class="work-card">
+              <article class="work-card reveal-up">
                 <a class="work-image-link" href="${card.link}" target="_blank" rel="noopener noreferrer">
                   <img src="${card.image}" alt="${getText(card.title, lang)}" onerror="this.parentElement.classList.add('is-missing'); this.remove();">
                 </a>
@@ -779,6 +780,9 @@
           </div>
         </section>
       `).join('');
+      if (window.refreshRevealUp) {
+        window.refreshRevealUp(root);
+      }
     }
 
     function setLang(lang) {
