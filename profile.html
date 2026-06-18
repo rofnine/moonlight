@@ -49,17 +49,16 @@
       background: transparent;
       color: #171717;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(62px, 10vw, 150px);
-      font-style: italic;
+      font-size: clamp(42px, 7vw, 96px);
+      font-style: normal;
       font-weight: 500;
-      line-height: .88;
+      line-height: 1;
       letter-spacing: 0;
-      cursor: pointer;
-      transition: border-color .25s ease, opacity .25s ease;
+      cursor: default;
     }
-    .story-word:hover, .story-word:focus-visible { border-color: #171717; opacity: .72; outline: none; }
     .story-hint { margin: 30px 0 0; color: #73736e; font-size: 14px; letter-spacing: .5px; }
-    .story-image { margin: 0; }
+    .story-image { margin: 0; cursor: pointer; }
+    .story-image:focus-visible { outline: 2px solid #171717; outline-offset: 8px; }
     .story-image img { display: block; width: 100%; max-height: 70vh; object-fit: cover; }
     .story-image--sensitive img { aspect-ratio: 1.28; }
     .story-image--archive img { aspect-ratio: 1.45; }
@@ -91,14 +90,14 @@
     }
     .word-close { position: absolute; top: 18px; right: 22px; width: 38px; height: 38px; border: 0; background: transparent; color: #171717; font-size: 28px; cursor: pointer; }
     .word-modal-label { margin: 0 0 18px; color: #8a8a84; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
-    .word-modal-title { margin: 0 0 30px; font-family: 'Cormorant Garamond', serif; font-size: clamp(54px, 9vw, 100px); font-style: italic; font-weight: 500; line-height: .9; }
+    .word-modal-title { margin: 0 0 30px; font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 7vw, 76px); font-style: normal; font-weight: 500; line-height: 1; }
     .word-modal-copy { margin: 0; color: #3c3c39; font-size: 17px; line-height: 2; word-break: keep-all; }
 
     @media (max-width: 768px) {
       .profile-story { padding-top: 148px; }
       .story-section { grid-template-columns: 1fr; min-height: 100vh; padding: 120px 22px; }
       .story-section--reverse .story-copy, .story-section--reverse .story-image { order: initial; }
-      .story-word { font-size: clamp(58px, 22vw, 92px); overflow-wrap: anywhere; }
+      .story-word { font-size: clamp(42px, 16vw, 64px); overflow-wrap: anywhere; }
       .story-image img { max-height: none; }
       .word-panel { padding: 56px 25px 38px; }
       .word-modal-copy { font-size: 15px; }
@@ -132,10 +131,10 @@
     <section class="story-section" data-story>
       <div class="story-copy">
         <span class="story-index">01 / ATTITUDE</span>
-        <button class="story-word" type="button" data-word="sensitive" data-en="SENSITIVE" data-ko="섬세함" data-ja="感受性">SENSITIVE</button>
-        <p class="story-hint i18n" data-en="Click the word to read my story." data-ko="단어를 누르면 제 이야기가 열립니다." data-ja="言葉をクリックすると、私の物語が開きます。">Click the word to read my story.</p>
+        <span class="story-word" data-en="SENSITIVE" data-ko="섬세함" data-ja="感受性">SENSITIVE</span>
+        <p class="story-hint i18n" data-en="Click the photo to read my story." data-ko="사진을 누르면 제 이야기가 열립니다." data-ja="写真をクリックすると、私の物語が開きます。">Click the photo to read my story.</p>
       </div>
-      <figure class="story-image story-image--sensitive">
+      <figure class="story-image story-image--sensitive" data-word="sensitive" role="button" tabindex="0">
         <img src="assets/profile-works.jpg" alt="흐릿한 꽃의 움직임을 담은 예술 사진">
         <figcaption class="i18n" data-en="Noticing small reactions" data-ko="작은 반응을 알아차리는 감각" data-ja="小さな反応に気づく感覚">Noticing small reactions</figcaption>
       </figure>
@@ -144,10 +143,10 @@
     <section class="story-section story-section--reverse" data-story>
       <div class="story-copy">
         <span class="story-index">02 / METHOD</span>
-        <button class="story-word" type="button" data-word="archive" data-en="Archive" data-ko="기록" data-ja="記録">Archive</button>
-        <p class="story-hint i18n" data-en="Click the word to read my story." data-ko="단어를 누르면 제 이야기가 열립니다." data-ja="言葉をクリックすると、私の物語が開きます。">Click the word to read my story.</p>
+        <span class="story-word" data-en="Archive" data-ko="기록" data-ja="記録">Archive</span>
+        <p class="story-hint i18n" data-en="Click the photo to read my story." data-ko="사진을 누르면 제 이야기가 열립니다." data-ja="写真をクリックすると、私の物語が開きます。">Click the photo to read my story.</p>
       </div>
-      <figure class="story-image story-image--archive">
+      <figure class="story-image story-image--archive" data-word="archive" role="button" tabindex="0">
         <img src="assets/profile-archive.jpg" alt="물 위의 꽃을 기록한 예술 사진">
         <figcaption class="i18n" data-en="Collecting evidence and context" data-ko="근거와 맥락을 축적하는 기록" data-ja="根拠と文脈を蓄積する記録">Collecting evidence and context</figcaption>
       </figure>
@@ -156,10 +155,10 @@
     <section class="story-section" data-story>
       <div class="story-copy">
         <span class="story-index">03 / DECISION</span>
-        <button class="story-word" type="button" data-word="intuitive" data-en="Intuitive" data-ko="직관" data-ja="直感">Intuitive</button>
-        <p class="story-hint i18n" data-en="Click the word to read my story." data-ko="단어를 누르면 제 이야기가 열립니다." data-ja="言葉をクリックすると、私の物語が開きます。">Click the word to read my story.</p>
+        <span class="story-word" data-en="Intuitive" data-ko="직관" data-ja="直感">Intuitive</span>
+        <p class="story-hint i18n" data-en="Click the photo to read my story." data-ko="사진을 누르면 제 이야기가 열립니다." data-ja="写真をクリックすると、私の物語が開きます。">Click the photo to read my story.</p>
       </div>
-      <figure class="story-image story-image--intuitive">
+      <figure class="story-image story-image--intuitive" data-word="intuitive" role="button" tabindex="0">
         <img src="assets/profile-intuitive.jpg" alt="초록빛 형태가 번지는 추상 사진">
         <figcaption class="i18n" data-en="Turning patterns into direction" data-ko="패턴을 방향으로 바꾸는 판단" data-ja="パターンを方向へ変える判断">Turning patterns into direction</figcaption>
       </figure>
@@ -349,6 +348,12 @@
     document.querySelectorAll('[data-word]').forEach(button => {
       button.addEventListener('click', () => {
         openStory(button.dataset.word);
+      });
+      button.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openStory(button.dataset.word);
+        }
       });
     });
 
